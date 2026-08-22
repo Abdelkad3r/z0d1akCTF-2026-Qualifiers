@@ -1,0 +1,270 @@
+{
+  "active_bad_profile": {
+    "id": "EAST-MATCH-043",
+    "longitudinal_offset_mm": 48,
+    "mm_per_degree": 10,
+    "reference_pitch_deg": 0.18,
+    "sensor": "CAM-EAST",
+    "status": "match-active"
+  },
+  "appeal_payload": {
+    "bad_sensor": "CAM-EAST",
+    "correct_profile": "EAST-CAL-042",
+    "corrected_margin_mm": -37,
+    "kick_frame": 154828,
+    "match_id": "HYD-SS-FINAL"
+  },
+  "appeal_response": {
+    "decision": "ONSIDE",
+    "flag": "zdk{FE3LinG_8aD_fOR_CroAtiA}",
+    "status": "accepted"
+  },
+  "corrected_decision": {
+    "all_player_lines": [
+      {
+        "deciding_keypoint": {
+          "calibration_id": "NORTH-CAL-031",
+          "calibration_offset_mm": 0,
+          "confidence": 0.99,
+          "corrected_x_mm": 1500,
+          "keypoint": "left_shoulder",
+          "raw_x_mm": 1500,
+          "sensor": "CAM-NORTH"
+        },
+        "line_mm": 1500,
+        "player": "THE-PLUG",
+        "team": "HYDRA"
+      },
+      {
+        "deciding_keypoint": {
+          "calibration_id": "WEST-CAL-019",
+          "calibration_offset_mm": 0,
+          "confidence": 0.99,
+          "corrected_x_mm": 1037,
+          "keypoint": "left_knee",
+          "raw_x_mm": 1037,
+          "sensor": "CAM-WEST"
+        },
+        "line_mm": 1037,
+        "player": "SKIPPER",
+        "team": "HYDRA"
+      },
+      {
+        "deciding_keypoint": {
+          "calibration_id": "EAST-CAL-042",
+          "calibration_offset_mm": 0,
+          "confidence": 0.99,
+          "corrected_x_mm": 1000,
+          "keypoint": "right_shoulder",
+          "raw_x_mm": 1000,
+          "sensor": "CAM-EAST"
+        },
+        "line_mm": 1000,
+        "player": "SHAKES",
+        "team": "SUPA"
+      },
+      {
+        "deciding_keypoint": {
+          "calibration_id": "SOUTH-CAL-027",
+          "calibration_offset_mm": 0,
+          "confidence": 0.99,
+          "corrected_x_mm": 900,
+          "keypoint": "left_shoulder",
+          "raw_x_mm": 900,
+          "sensor": "CAM-SOUTH"
+        },
+        "line_mm": 900,
+        "player": "RIPPLE-WHITE",
+        "team": "HYDRA"
+      }
+    ],
+    "attacker": {
+      "deciding_keypoint": {
+        "calibration_id": "EAST-CAL-042",
+        "calibration_offset_mm": 0,
+        "confidence": 0.99,
+        "corrected_x_mm": 1000,
+        "keypoint": "right_shoulder",
+        "raw_x_mm": 1000,
+        "sensor": "CAM-EAST"
+      },
+      "line_mm": 1000,
+      "player": "SHAKES",
+      "team": "SUPA"
+    },
+    "decision": "ONSIDE",
+    "defender_line_player": {
+      "deciding_keypoint": {
+        "calibration_id": "WEST-CAL-019",
+        "calibration_offset_mm": 0,
+        "confidence": 0.99,
+        "corrected_x_mm": 1037,
+        "keypoint": "left_knee",
+        "raw_x_mm": 1037,
+        "sensor": "CAM-WEST"
+      },
+      "line_mm": 1037,
+      "player": "SKIPPER",
+      "team": "HYDRA"
+    },
+    "frame": 154828,
+    "margin_mm": -37
+  },
+  "fixtures": {
+    "fixtures": [
+      {
+        "access": "public",
+        "id": "HYD-SS-FINAL",
+        "kind": "match",
+        "label": "Hydra FC v Supa Strikas"
+      },
+      {
+        "access": "restricted",
+        "id": "HYD-CAL-EAST-042",
+        "kind": "calibration",
+        "label": "East Array Tide Calibration 042"
+      },
+      {
+        "access": "restricted",
+        "id": "HYD-REHEARSAL-17",
+        "kind": "rehearsal",
+        "label": "Closed Stadium Rehearsal 17"
+      },
+      {
+        "access": "public",
+        "id": "HYD-IU-LEAGUE",
+        "kind": "match",
+        "label": "Hydra FC v Invincible United"
+      }
+    ]
+  },
+  "kick_frame_ball": {
+    "acceleration_mps2": 24.8,
+    "foot_ball_distance_mm": 42,
+    "x_mm": 965
+  },
+  "published_decision": {
+    "all_player_lines": [
+      {
+        "deciding_keypoint": {
+          "calibration_id": "NORTH-CAL-031",
+          "calibration_offset_mm": 0,
+          "confidence": 0.99,
+          "corrected_x_mm": 1500,
+          "keypoint": "left_shoulder",
+          "raw_x_mm": 1500,
+          "sensor": "CAM-NORTH"
+        },
+        "line_mm": 1500,
+        "player": "THE-PLUG",
+        "team": "HYDRA"
+      },
+      {
+        "deciding_keypoint": {
+          "calibration_id": "EAST-MATCH-043",
+          "calibration_offset_mm": 48,
+          "confidence": 0.99,
+          "corrected_x_mm": 1048,
+          "keypoint": "right_shoulder",
+          "raw_x_mm": 1000,
+          "sensor": "CAM-EAST"
+        },
+        "line_mm": 1048,
+        "player": "SHAKES",
+        "team": "SUPA"
+      },
+      {
+        "deciding_keypoint": {
+          "calibration_id": "WEST-CAL-019",
+          "calibration_offset_mm": 0,
+          "confidence": 0.99,
+          "corrected_x_mm": 1037,
+          "keypoint": "left_knee",
+          "raw_x_mm": 1037,
+          "sensor": "CAM-WEST"
+        },
+        "line_mm": 1037,
+        "player": "SKIPPER",
+        "team": "HYDRA"
+      },
+      {
+        "deciding_keypoint": {
+          "calibration_id": "SOUTH-CAL-027",
+          "calibration_offset_mm": 0,
+          "confidence": 0.99,
+          "corrected_x_mm": 900,
+          "keypoint": "left_shoulder",
+          "raw_x_mm": 900,
+          "sensor": "CAM-SOUTH"
+        },
+        "line_mm": 900,
+        "player": "RIPPLE-WHITE",
+        "team": "HYDRA"
+      }
+    ],
+    "attacker": {
+      "deciding_keypoint": {
+        "calibration_id": "EAST-MATCH-043",
+        "calibration_offset_mm": 48,
+        "confidence": 0.99,
+        "corrected_x_mm": 1048,
+        "keypoint": "right_shoulder",
+        "raw_x_mm": 1000,
+        "sensor": "CAM-EAST"
+      },
+      "line_mm": 1048,
+      "player": "SHAKES",
+      "team": "SUPA"
+    },
+    "decision": "OFFSIDE",
+    "defender_line_player": {
+      "deciding_keypoint": {
+        "calibration_id": "WEST-CAL-019",
+        "calibration_offset_mm": 0,
+        "confidence": 0.99,
+        "corrected_x_mm": 1037,
+        "keypoint": "left_knee",
+        "raw_x_mm": 1037,
+        "sensor": "CAM-WEST"
+      },
+      "line_mm": 1037,
+      "player": "SKIPPER",
+      "team": "HYDRA"
+    },
+    "frame": 154828,
+    "margin_mm": 11
+  },
+  "root": {
+    "api_version": "v1",
+    "incident": {
+      "match_id": "HYD-SS-FINAL",
+      "published_decision": "OFFSIDE",
+      "published_margin_mm": 11,
+      "subject": "Shakes equalizer review"
+    },
+    "protocol_version": "FLOAT-VAR-3.1",
+    "resources": {
+      "fixtures": "/api/v1/fixtures?team=hydra",
+      "match_summary": "/api/v1/matches/{id}/summary"
+    },
+    "service": "Hydra Floating VAR Telemetry Gateway"
+  },
+  "summary": {
+    "attacking_direction": "+x",
+    "decision": "OFFSIDE",
+    "disputed_event": "Shakes equalizer",
+    "id": "HYD-SS-FINAL",
+    "label": "Hydra FC v Supa Strikas",
+    "reported_margin_mm": 11,
+    "score": "1-0",
+    "system_profile": "EAST-MATCH-043"
+  },
+  "validated_replacement_profile": {
+    "id": "EAST-CAL-042",
+    "longitudinal_offset_mm": 0,
+    "mm_per_degree": 10,
+    "reference_pitch_deg": 0.18,
+    "sensor": "CAM-EAST",
+    "status": "validated"
+  }
+}

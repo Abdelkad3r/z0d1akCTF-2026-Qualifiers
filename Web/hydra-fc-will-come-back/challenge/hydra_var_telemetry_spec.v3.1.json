@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "document_type": "hydra.var.telemetry.interchange",
+  "specification_version": "3.1",
+  "coordinate_system": {
+    "longitudinal_axis": "x",
+    "unit": "millimetre",
+    "attacking_direction": "positive"
+  },
+  "decision_model": {
+    "kick_frame": {
+      "operator": "all",
+      "conditions": [
+        {
+          "field": "ball.acceleration_mps2",
+          "operator": ">=",
+          "value": 20
+        },
+        {
+          "field": "ball.foot_ball_distance_mm",
+          "operator": "<=",
+          "value": 80
+        }
+      ]
+    },
+    "observation_fusion": {
+      "group_by": "keypoint",
+      "selection": "maximum_confidence"
+    },
+    "calibration": {
+      "output": "corrected_x_mm",
+      "expression": "raw_x_mm + longitudinal_offset_mm + round((deck_pitch_deg - reference_pitch_deg) * mm_per_degree)"
+    },
+    "eligible_keypoints": [
+      "head",
+      "left_shoulder",
+      "right_shoulder",
+      "torso",
+      "left_knee",
+      "right_knee",
+      "left_foot",
+      "right_foot"
+    ],
+    "player_line": "maximum corrected_x_mm among eligible keypoints",
+    "defender_line": "second-largest defending player_line",
+    "margin": {
+      "expression": "attacking_player_line_mm - defender_line_mm",
+      "offside_when": "> 0",
+      "onside_when": "<= 0"
+    }
+  },
+  "api": {
+    "media_type": "application/json",
+    "base_path": "/api/v1",
+    "operations": {
+      "list_fixtures": {
+        "method": "GET",
+        "path": "/fixtures?team={team}"
+      },
+      "match_summary": {
+        "method": "GET",
+        "path": "/matches/{id}/summary"
+      },
+      "compare_telemetry": {
+        "method": "POST",
+        "path": "/compare",
+        "request_schema": {
+          "type": "object",
+          "required": [
+            "match_ids",
+            "streams"
+          ],
+          "properties": {
+            "match_ids": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 8,
+              "items": {
+                "type": "string"
+              }
+            },
+            "streams": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "enum": [
+                  "raw_tracking",
+                  "deck_imu",
+                  "calibration",
+                  "audit"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "submit_appeal": {
+        "method": "POST",
+        "path": "/appeal",
+        "request_schema": {
+          "type": "object",
+          "required": [
+            "match_id",
+            "kick_frame",
+            "bad_sensor",
+            "correct_profile",
+            "corrected_margin_mm"
+          ],
+          "properties": {
+            "match_id": {
+              "type": "string"
+            },
+            "kick_frame": {
+              "type": "integer"
+            },
+            "bad_sensor": {
+              "type": "string"
+            },
+            "correct_profile": {
+              "type": "string"
+            },
+            "corrected_margin_mm": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

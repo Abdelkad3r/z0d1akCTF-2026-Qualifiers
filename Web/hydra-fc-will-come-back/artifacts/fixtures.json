@@ -1,0 +1,28 @@
+{
+  "fixtures": [
+    {
+      "access": "public",
+      "id": "HYD-SS-FINAL",
+      "kind": "match",
+      "label": "Hydra FC v Supa Strikas"
+    },
+    {
+      "access": "restricted",
+      "id": "HYD-CAL-EAST-042",
+      "kind": "calibration",
+      "label": "East Array Tide Calibration 042"
+    },
+    {
+      "access": "restricted",
+      "id": "HYD-REHEARSAL-17",
+      "kind": "rehearsal",
+      "label": "Closed Stadium Rehearsal 17"
+    },
+    {
+      "access": "public",
+      "id": "HYD-IU-LEAGUE",
+      "kind": "match",
+      "label": "Hydra FC v Invincible United"
+    }
+  ]
+}

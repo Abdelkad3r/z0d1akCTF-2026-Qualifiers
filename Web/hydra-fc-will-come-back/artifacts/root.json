@@ -1,0 +1,15 @@
+{
+  "api_version": "v1",
+  "incident": {
+    "match_id": "HYD-SS-FINAL",
+    "published_decision": "OFFSIDE",
+    "published_margin_mm": 11,
+    "subject": "Shakes equalizer review"
+  },
+  "protocol_version": "FLOAT-VAR-3.1",
+  "resources": {
+    "fixtures": "/api/v1/fixtures?team=hydra",
+    "match_summary": "/api/v1/matches/{id}/summary"
+  },
+  "service": "Hydra Floating VAR Telemetry Gateway"
+}
