@@ -1,0 +1,4 @@
+artifacts/*.eml binary
+artifacts/*.pdf binary
+artifacts/*.png binary
+challenge/*.zip binary

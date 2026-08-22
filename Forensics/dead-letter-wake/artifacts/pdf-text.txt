@@ -1,0 +1,83 @@
+                 Dead Letter Wake: Relay Continuity Memorandum
+
+
+Introduction
+
+This memorandum records the continuity procedure used after the research vessel Sable Meridian
+
+stopped answering routine relay checks. The process preserves the last authenticated instruction
+
+without depending on the vessel's failed uplink.
+
+
+Background Information
+
+At 02:30 UTC the shore relay accepted a numbered sequence from the vessel's watch account. Most
+
+deliveries remained visible in the packet recorder, while one crossed an encrypted transport boundary
+
+and was retained only in deferred queue state. The message series must be restored before its
+
+contents can be trusted.
+
+
+Objective
+
+Recover the final wake authorization, verify that every numbered component belongs to the same
+
+message identity, and preserve the resulting document as evidence. Any value copied from an
+
+incomplete sequence is to be treated as a training artifact.
+
+
+Strategy Overview
+
+The recovery team will correlate wire traffic with the relay's queue journal, rebuild the original MIME
+
+entity, and examine the attached authorization memorandum. The document export service applied a
+
+mosaic filter before discarding its source text; the retained calibration capture is the only supported
+
+reversal reference.
+Execution Plan
+
+Phase 1: Correlate Deliveries
+
+Group partial messages by their MIME identity and number. Use the encrypted session's endpoint
+
+and time to identify its deferred queue record rather than attempting to recover transport secrets.
+
+
+Phase 2: Restore the Message
+
+Join the seven raw partial bodies in sequence and parse the result as a new MIME message.
+
+Preserve the attached PDF exactly; rendering or recompression changes the mosaic block averages.
+
+
+Phase 3: Validate Continuity
+
+Extract the document's raster objects losslessly. The PIX-8 target and its same-renderer calibration
+
+capture use gamma-encoded RGB averages and must be handled as original-resolution images.
+
+
+Conclusion
+
+A successful recovery proves that the final instruction survived both the missing wire fragment and
+
+the document export service's unsafe visual redaction.
+
+
+Appendix: Recovery Authorization
+
+The authorization key below was mosaiced before the source text layer was discarded. The pale
+acquisition bands are part of the target crop.
+
+
+authorization:
+
+
+
+Calibration capture - PIX-8 / gamma-encoded RGB / same renderer / do not resample
+

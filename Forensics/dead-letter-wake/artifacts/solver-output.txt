@@ -1,0 +1,52 @@
+[+] Handout SHA-256: 7168c1c9bf11c66520e749ea3fd7d6011225e9dc959a20c37e9a668040951984
+[+] Verified evidence/dead-letter.pcap: 97a7f265581ac1c0bd1fe1bd05b9df25d450e2a2bf3f0d841fd28b67b63fd36a
+[+] Verified evidence/mail-queue.tar.gz: 17f95915331c7ef0dd23b8afe7dd7f9cf0bdcb9a31ed8609ec08fee88d9e7cd0
+[+] Partial MIME identity: <wake.2147.deadletter@relay.pelagos.invalid>
+[+] Part 1/7: pcap/10.44.0.77 tcp.stream=1 (15388 raw bytes)
+[+] Part 2/7: pcap/10.44.0.77 tcp.stream=6 (16378 raw bytes)
+[+] Part 3/7: pcap/10.44.0.77 tcp.stream=3 (16378 raw bytes)
+[+] Part 4/7: queue/DLW214704.eml TLS (16380 raw bytes)
+[+] Part 5/7: pcap/10.44.0.77 tcp.stream=8 (16378 raw bytes)
+[+] Part 6/7: pcap/10.44.0.77 tcp.stream=11 (16300 raw bytes)
+[+] Part 7/7: pcap/10.44.0.77 tcp.stream=12 (16141 raw bytes)
+[+] Reconstructed MIME SHA-256: 92376c22a54e4c5eb0877c7be228e5b5112ef2f5c1c0d675a762b2af8e89f45d
+[+] Extracted PDF SHA-256: 2d95160df24564d731fed4e349d108624817b53a8859281d0f542a2bed6a16b4
+[+] Target raster: 728x56, SHA-256 2e42c92efca1e2dc0d505672b09f07e1efcf606a60574f4bcd1f37a8fd403334
+[+] Calibration raster: 1864x256, SHA-256 c89aaec94a7a246c106710c7b0018fa2dcefd4a36e3b97a28e5345d008fc0fa9
+[+] Renderer font SHA-256: 57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e
+[+] Calibration full-image MSE: 0.945549
+[.] depth=05 best_mse=0.247423 prefix=zdk{f
+[.] depth=06 best_mse=0.236824 prefix=zdk{D3
+[.] depth=07 best_mse=0.234882 prefix=zdk{D3A
+[.] depth=08 best_mse=0.232387 prefix=zdk{D3Ad
+[.] depth=09 best_mse=0.230582 prefix=zdk{D3Ad_
+[.] depth=10 best_mse=0.221699 prefix=zdk{D3Ad_f
+[.] depth=11 best_mse=0.224436 prefix=zdk{D3Ad_L3
+[.] depth=12 best_mse=0.224890 prefix=zdk{D3Ad_L3f
+[.] depth=13 best_mse=0.232507 prefix=zdk{D3Ad_L3tT
+[.] depth=14 best_mse=0.235308 prefix=zdk{D3Ad_L3tTf
+[.] depth=15 best_mse=0.237636 prefix=zdk{D3Ad_L3tTeL
+[.] depth=16 best_mse=0.235777 prefix=zdk{D3Ad_L3tTeRf
+[.] depth=17 best_mse=0.239132 prefix=zdk{D3Ad_L3tTeRs_
+[.] depth=18 best_mse=0.232946 prefix=zdk{D3Ad_L3tTeRs_5
+[.] depth=19 best_mse=0.232876 prefix=zdk{D3Ad_L3tTeRs_5f
+[.] depth=20 best_mse=0.235459 prefix=zdk{D3Ad_L3tTeRs_5pf
+[.] depth=21 best_mse=0.233804 prefix=zdk{D3Ad_L3tTeRs_5pEf
+[.] depth=22 best_mse=0.235356 prefix=zdk{D3Ad_L3tTeRs_5pE4k
+[.] depth=23 best_mse=0.238233 prefix=zdk{D3Ad_L3tTeRs_5pE4k_
+[.] depth=24 best_mse=0.232027 prefix=zdk{D3Ad_L3tTeRs_5pE4k_r
+[.] depth=25 best_mse=0.231393 prefix=zdk{D3Ad_L3tTeRs_5pE4k_af
+[.] depth=26 best_mse=0.228365 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afT
+[.] depth=27 best_mse=0.230945 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afTf
+[.] depth=28 best_mse=0.235335 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afTer
+[.] depth=29 best_mse=0.236584 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afTer_
+[.] depth=30 best_mse=0.230872 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afTer_T
+[.] depth=31 best_mse=0.230708 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afTer_Tr
+[.] depth=32 best_mse=0.228633 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afTer_THt
+[.] depth=33 best_mse=0.229954 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afTer_THE_
+[.] depth=34 best_mse=0.227077 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afTer_THE_w
+[.] depth=35 best_mse=0.226313 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afTer_THE_wA
+[.] depth=36 best_mse=0.226338 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afTer_THE_wAk
+[.] depth=37 best_mse=0.228382 prefix=zdk{D3Ad_L3tTeRs_5pE4k_afTer_THE_wAke
+[+] Full-image PIX-8 MSE: 0.225977
+[+] FLAG: zdk{D3Ad_L3tTeRs_5pE4k_afTer_THE_wAke}
