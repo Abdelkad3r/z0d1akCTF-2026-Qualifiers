@@ -1,0 +1,4 @@
+$ python3 solve.py phantom-phase-fb785313a3b6.chals.z0d1ak.org 1337
+PHANTOM PHASE relay controller
+submit one framed DRV1 program
+zdk{DEAD_rEckon1N6_sl6N3d_the_wr0n6_CoURs3}

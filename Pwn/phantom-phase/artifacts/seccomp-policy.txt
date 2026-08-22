@@ -1,0 +1,16 @@
+Phantom Phase seccomp policy
+============================
+
+The binary installs a 19-instruction classic BPF filter with PR_SET_SECCOMP.
+After verifying AUDIT_ARCH_X86_64, it permits only these syscall numbers:
+
+0    read
+1    write
+3    close
+15   rt_sigreturn
+60   exit
+231  exit_group
+257  openat
+
+Every other syscall returns SECCOMP_RET_KILL_PROCESS. The final exploit uses
+only openat, read, write, and exit.
