@@ -1,0 +1,22 @@
+husk -- recovered constants and derived buffers
+==============================================================
+Flag length             : 41 (0x29)
+
+Anti-debug XOR constants (each result is 0 in a clean run):
+  ptrace()      ^ 0x1337c0de
+  TracerPid     ^ 0xb16b00b5
+  rdtsc timing  ^ 0xfeedface
+  LD_PRELOAD    ^ 0xcafebabe
+  => RC4 key (clean run) = dec03713b5006bb1cefaedfebebafeca
+
+rodata table1 @0x206c (41B): bb104ef49e62f2cf7e0a744637706a25893583a5171bef196c6190d1668f6d8d4ed9990c1432f0fb4c
+rodata table2 @0x20a0 (16B): 7319a6d42b8e55c10fb7623de8944a20
+CONST_B[i] = table1[(0x11*i)%41] ^ table2[i%16]:
+   c82c3fa0fa7a42f37fda9024a41d932ae35703c01c01372ef4922c438984c92c357f38cfdbe4d80e63
+
+EXPECTED = RC4_keystream(key) ^ CONST_B:
+   e722f9f7f7f87fe1e480cd5c4a590be1385ab23b3bf906d5d0d58785b8fe9cdb2af33116651b460b65
+
+LCG(seed=0x1234abcd) buffer: ba0c97c96ff85d1a7b635927170c9caf2b7388fe5dec0c39598b277502ca47db2978f5d60d6100feb8
+
+FLAG: zdk{7h3_An7LdEbu6_Was_Th3_decryP7LON_key}

@@ -9,6 +9,7 @@ Qualifiers.
 | --- | --- | --- | --- |
 | Reverse Engineering | stars-below | Solved | [Read the writeup](Reverse/stars-below/README.md) |
 | Reverse Engineering | Black Tide Survey | Solved | [Read the writeup](Reverse/black-tide-survey/README.md) |
+| Reverse Engineering | husk | Solved | [Read the writeup](Reverse/husk/README.md) |
 | Forensics | Black Box | Solved | [Read the writeup](Forensics/black-box/README.md) |
 | Forensics | Ghost in the GPU | Solved | [Read the writeup](Forensics/ghost-in-the-gpu/README.md) |
 | Forensics | layer-eight | Solved | [Read the writeup](Forensics/layer-eight/README.md) |
