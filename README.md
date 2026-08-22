@@ -24,6 +24,7 @@ Qualifiers.
 | Binary Exploitation | Salvage Protocol | Solved | [Read the writeup](Pwn/salvage-protocol/README.md) |
 | Binary Exploitation | rapture | Solved | [Read the writeup](Pwn/rapture/README.md) |
 | Binary Exploitation | House XIII | Solved | [Read the writeup](Pwn/house-xiii/README.md) |
+| Binary Exploitation | Dead Reckoning | Solved | [Read the writeup](Pwn/dead-reckoning/README.md) |
 | Cryptography | siren | Solved | [Read the writeup](Crypto/siren/README.md) |
 | Cryptography | Rewind | Solved | [Read the writeup](Crypto/rewind/README.md) |
 | Cryptography | Rewind Revenge | Solved | [Read the writeup](Crypto/rewind-revenge/README.md) |

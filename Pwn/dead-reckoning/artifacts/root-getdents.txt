@@ -1,0 +1,16 @@
+Directory listing recovered with getdents64("/") from arena shellcode:
+
+.
+..
+server
+dev
+proc
+sys
+run
+etc
+dead_reckoning
+qemu-aarch64_be-static
+
+The entry "server" is a regular x86-64 ELF wrapper, not a directory. The
+challenge binary runs under qemu-aarch64_be-static, and the flag is provided by
+the wrapper environment rather than as a normal /flag file.

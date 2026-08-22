@@ -1,0 +1,76 @@
+Dead Reckoning static offsets
+=============================
+
+Binary:
+  dead_reckoning
+  ELF64 AArch64 big-endian, static PIE, stripped
+
+Important code offsets:
+  0x01d0  line-input helper, reads one byte at a time
+  0x0260  exit(status)
+  0x0280  write-string helper
+  0x02e0  prints "The quarantine route still holds."
+  0x02f0  decimal/hex integer parser
+  0x03e0  main/menu
+  0x07fc  mov sp, [pie+0x20000]; rt_sigreturn
+  0x0818  mov x8, #139; svc #0; brk
+  0x0824  svc #0; ret
+  0x082c  exit(0)
+  0x083c  route importer with stack overflow
+
+Arena setup:
+  arena size:         0x2000
+  arena+0x18c0:      custom stack cookie
+  arena+0x18c8:      code pointer, initialized to pie+0x2e0
+  arena+0x18d0:      survey length, initialized to 0x30
+
+Top-byte-ignore repair bug:
+  option 1 masks the destination with 0x00ffffffffffffff for bounds checks,
+  but performs the final 8-byte store through the unmasked pointer.
+
+  Tagged write target used:
+    (0xff << 56) | (arena + 0x18d0)
+
+  Patch value:
+    0xd8
+
+Survey leak layout, relative to arena+0x1800:
+  +0x0c0: custom cookie
+  +0x0c8: pie+0x2e0 pointer
+  +0x0d0: survey length
+
+Route importer stack layout:
+  local buffer:       sp+0x000
+  custom cookie:      sp+0x0c0
+  saved x29:          sp+0x0c8
+  saved x30:          sp+0x0d0
+  post-epilogue sp:   original sp+0x100
+  max accepted input: 0x600 bytes
+
+AArch64 rt_sigreturn frame offsets used:
+  x0:      frame+0x138
+  x1:      frame+0x140
+  x2:      frame+0x148
+  x8:      frame+0x178
+  x20:     frame+0x1d8
+  x21:     frame+0x1e0
+  x30:     frame+0x228
+  sp:      frame+0x230
+  pc:      frame+0x238
+
+Big-endian signal-frame note:
+  The target is AArch64 BE8: instruction words are stored little-endian, while
+  regular data loads/stores are big-endian. The FPSIMD context record header in
+  the sigreturn frame must therefore be written as two big-endian 32-bit fields:
+
+    magic = 0x46508001
+    size  = 0x00000210
+
+Final SROP syscall:
+  mprotect(arena, 0x2000, PROT_READ | PROT_WRITE | PROT_EXEC)
+
+Final shellcode:
+  openat(AT_FDCWD, path, O_RDONLY, 0)
+  read(fd, arena+0x800, 0x100)
+  write(1, arena+0x800, 0x100)
+  exit(0)
