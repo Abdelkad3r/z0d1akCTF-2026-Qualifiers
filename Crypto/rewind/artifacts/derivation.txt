@@ -1,0 +1,57 @@
+Rewind - keystream-reuse derivation
+====================================================================
+len(secret_ct) = 44 bytes
+len(keystream) = 44 bytes  (= enc(0x00 * 44))
+
+secret_ct : c50ccaacbdb7ccf995d89847efd1bcf9ea3c9981315ec3ca3ae6a1dcddabb095f9700de99eece96c6e72689a
+keystream : bf68a1d7efd29b95fb9cf109888ec891af63dab16410b7f948b9d39988d883e6a62465dac19fbd3e2b4605e7
+flag = secret_ct XOR keystream
+flag(hex) : 7a646b7b5265576c6e44694e675f7468455f4330554e7433725f7245557333735f5468335f73545245346d7d
+flag(ascii): zdk{ReWlnDiNg_thE_C0UNt3r_rEUs3s_Th3_sTRE4m}
+
+  i  sec   ks  xor  ascii
+------------------------------
+  0   c5   bf   7a   z
+  1   0c   68   64   d
+  2   ca   a1   6b   k
+  3   ac   d7   7b   {
+  4   bd   ef   52   R
+  5   b7   d2   65   e
+  6   cc   9b   57   W
+  7   f9   95   6c   l
+  8   95   fb   6e   n
+  9   d8   9c   44   D
+ 10   98   f1   69   i
+ 11   47   09   4e   N
+ 12   ef   88   67   g
+ 13   d1   8e   5f   _
+ 14   bc   c8   74   t
+ 15   f9   91   68   h
+ 16   ea   af   45   E
+ 17   3c   63   5f   _
+ 18   99   da   43   C
+ 19   81   b1   30   0
+ 20   31   64   55   U
+ 21   5e   10   4e   N
+ 22   c3   b7   74   t
+ 23   ca   f9   33   3
+ 24   3a   48   72   r
+ 25   e6   b9   5f   _
+ 26   a1   d3   72   r
+ 27   dc   99   45   E
+ 28   dd   88   55   U
+ 29   ab   d8   73   s
+ 30   b0   83   33   3
+ 31   95   e6   73   s
+ 32   f9   a6   5f   _
+ 33   70   24   54   T
+ 34   0d   65   68   h
+ 35   e9   da   33   3
+ 36   9e   c1   5f   _
+ 37   ec   9f   73   s
+ 38   e9   bd   54   T
+ 39   6c   3e   52   R
+ 40   6e   2b   45   E
+ 41   72   46   34   4
+ 42   68   05   6d   m
+ 43   9a   e7   7d   }
