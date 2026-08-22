@@ -1,0 +1,31 @@
+Supplied Ubuntu glibc 2.35 offsets
+==================================
+
+unsorted arena pointer  0x21ace0
+environ                 0x222200
+main return site        0x029d90
+pop rdi; ret            0x02a3e5
+plain ret               0x02a3e6
+system                  0x050d70
+/bin/sh                 0x1d8678
+exit                    0x0455f0
+
+Challenge binary offsets
+========================
+
+main                    0x1140
+snapshot handler        0x1238
+inspect handler         0x12f0
+jettison handler        0x1370
+recalibrate handler     0x1400
+requisition handler     0x14d8
+read_long               0x1790
+manifest                0x4060
+
+Request to glibc chunk sizes
+============================
+
+0x408 -> 0x410  initial tcache fill and unsorted-bin leaks
+0x3d8 -> 0x3e0  environ arbitrary allocation
+0x3b8 -> 0x3c0  broad stack disclosure
+0x088 -> 0x090  final saved-return allocation

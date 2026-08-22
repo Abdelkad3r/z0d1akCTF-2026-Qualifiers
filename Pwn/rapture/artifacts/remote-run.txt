@@ -1,0 +1,12 @@
+[+] unsorted heap pointer:  0x55556d4d4f00
+[+] unsorted arena pointer: 0x7f0010b22ce0
+[+] libc base:              0x7f0010908000
+[+] 0x3e0-bin safe-link key: 0x55556d4d5
+[+] environ stack pointer:  0x7ffc8de325f0
+[+] 0x3c0-bin safe-link key: 0x55556d4d5
+[+] leaked stack window:    0x7ffc8de321f0-0x7ffc8de325a8
+[+] main saved return:      0x7ffc8de324d8
+[+] 0x90-bin safe-link key:  0x55556d4d5
+Blowing ballast... surfacing.
+zdk{FreeD_ln_tHE_DeeP_But_N3v3R_FORg0t7en}
+[+] flag: zdk{FreeD_ln_tHE_DeeP_But_N3v3R_FORg0t7en}
