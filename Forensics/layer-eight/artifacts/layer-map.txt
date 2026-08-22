@@ -1,0 +1,84 @@
+layer-eight :: OCI image layer map (nimbusnotes:1.4.2)
+========================================================================
+Non-empty build steps mapped to filesystem layers, in order.
+
+LAYER 1
+  gzip blob : sha256:cb30a1999f85f8a9c993722714b52156d11bd49f7f975b2ec31f1ab12137c787
+  diff_id   : sha256:d1a32c321b9bea9fbcd595cab0dbe7d24091b06e79d49af4317ceec3c8c0367b
+  step      : /bin/sh -c #(nop) ADD file:base rootfs in /
+  adds      :
+     + etc/os-release (65B)
+     + etc/passwd (72B)
+     + bin/sh (46B)
+
+LAYER 2
+  gzip blob : sha256:9c9a3face4d8fa28c134822a76c3f107443ac89ada6702d729c2152be6f0f5a9
+  diff_id   : sha256:0f1d77376faa16ab5230f4312eebada2dae76d13b7896787a96e3e93afa50150
+  step      : /bin/sh -c npm ci --omit=dev
+  adds      :
+     + app/package.json (164B)
+     + usr/lib/libnimbus.so.1 (31B)
+     + app/node_modules/.package-lock.json (36B)
+
+LAYER 3
+  gzip blob : sha256:2f63bb3d7557458b01a05206ec928bb48f4780ea9b2d6b8683f5d225c8d652fc
+  diff_id   : sha256:fc6d472fdb50c02778a73ba00ae0b4d2cbc67ee7c12d7d03201f82b146af7f91
+  step      : /bin/sh -c #(nop) COPY dir:app source in /app
+  adds      :
+     + app/server.js (163B)
+     + app/config/settings.yaml (40B)
+
+LAYER 4
+  gzip blob : sha256:03d3e9ab2d436eabfdff78c56f1a306d28d5fef023cdee9dd5bd887a32236bc2
+  diff_id   : sha256:70ffbd5ae9528e9908f8d23c48f7de84d3ad6b024656328dcafe7fdf600231fe
+  step      : /bin/sh -c --mount=type=secret,id=deploy_key install -m600 /run/secrets/deploy_key /app/.secrets/deploy_key
+  adds      :
+     + app/.secrets/deploy_key (139B)
+     + app/.secrets/README (53B)
+
+LAYER 5
+  gzip blob : sha256:aca2018f01136276ffc152a9e7b693feb9fec6ac07bb2b3254e5cfe348fef2c6
+  diff_id   : sha256:5d204045c1ea934bec905700f904c2142ebd6cc07343d154431add8f553643f7
+  step      : /bin/sh -c install application assets
+  adds      :
+     + app/assets/logo.txt (38B)
+     + app/config/settings.yaml (40B)
+
+LAYER 6
+  gzip blob : sha256:1680d763aeda76fa9dbbaa40cf457031d3baa139ed78e0acf528f5660660f494
+  diff_id   : sha256:25df7c6f6beec6e2eef55ec64cfa91125098d4adc1cf327f5897bfc6642383d8
+  step      : /bin/sh -c /app/scripts/postinstall.sh
+  adds      :
+     + usr/lib/nimbus/provenance.py (432B)
+     + app/scripts/postinstall.sh (89B)
+     + usr/local/bin/healthcheck (84B)
+
+LAYER 7
+  gzip blob : sha256:235dbdddd3de5d869c26dfee132b01bf4a7450aa43f227917fba55d3886b391f
+  diff_id   : sha256:d8094d7d8066b5534d02a8b768ab3573e4240fed0ad7e8c7daec5e6ac8452de8
+  step      : /bin/sh -c install locale bundles
+  adds      :
+     + app/locales/en.json (37B)
+     + app/locales/es.json (39B)
+
+LAYER 8
+  gzip blob : sha256:95c756079f77ac8c309033f755760ca3c4cbe536b28834d18d32f14ee7d83794
+  diff_id   : sha256:8c8773e09bdba224a60589968ef75a17867e4507af523e8e2f5c295e1b3cc8fa
+  step      : /bin/sh -c rm -f /app/.secrets/deploy_key /app/scripts/postinstall.sh /usr/lib/nimbus/provenance.py
+  adds      :
+     + usr/local/bin/healthcheck (17B)
+  WHITEOUTS :
+     x app/.secrets/deploy_key   <- deletion marker (content still in earlier layer)
+     x app/scripts/postinstall.sh   <- deletion marker (content still in earlier layer)
+     x usr/lib/nimbus/provenance.py   <- deletion marker (content still in earlier layer)
+
+LAYER 9
+  gzip blob : sha256:c3605c342d34d9372024809820265616909d307f200f9aaf1ef2fb254c5eb18b
+  diff_id   : sha256:f7dcb8197957a73fb4b6de13d0ddd95f7732865cf63be94fef5f5a0e3d810a69
+  step      : /bin/sh -c write release marker
+  adds      :
+     + app/BUILD (29B)
+     + app/config/settings.yaml (41B)
+
+Challenge name "layer-eight" -> LAYER 8 is the whiteout (rm) layer.
+Deleted content recovered from: deploy_key=LAYER 4, provenance.py & postinstall.sh=LAYER 6.

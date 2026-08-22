@@ -11,6 +11,7 @@ Qualifiers.
 | Reverse Engineering | Black Tide Survey | Solved | [Read the writeup](Reverse/black-tide-survey/README.md) |
 | Forensics | Black Box | Solved | [Read the writeup](Forensics/black-box/README.md) |
 | Forensics | Ghost in the GPU | Solved | [Read the writeup](Forensics/ghost-in-the-gpu/README.md) |
+| Forensics | layer-eight | Solved | [Read the writeup](Forensics/layer-eight/README.md) |
 | Web Exploitation | captcha | Solved | [Read the writeup](Web/captcha/README.md) |
 | Binary Exploitation | Salvage Protocol | Solved | [Read the writeup](Pwn/salvage-protocol/README.md) |
 | Binary Exploitation | rapture | Solved | [Read the writeup](Pwn/rapture/README.md) |

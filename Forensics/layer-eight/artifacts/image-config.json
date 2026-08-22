@@ -1,0 +1,87 @@
+{
+    "architecture": "amd64",
+    "config": {
+        "Cmd": [
+            "node",
+            "/app/server.js"
+        ],
+        "Entrypoint": null,
+        "Env": [
+            "PATH=/usr/local/bin:/usr/bin:/bin",
+            "NODE_ENV=production",
+            "NIMBUS_RELEASE=1.4.2"
+        ],
+        "Labels": {
+            "com.nimbusnotes.provenance.layout": "c,a,b",
+            "com.nimbusnotes.provenance.part-a": "dZ4Ranut8tzxp+B9+sZ7H+8XGSdtBFAK",
+            "com.nimbusnotes.provenance.part-b": "XcH39DQsNt67UAbE90W4KrXkQc0DyVT8",
+            "com.nimbusnotes.provenance.part-c": "AU5pbWJ1c05vdGVzIUHvlVyex5o1USWI",
+            "com.nimbusnotes.provenance.step": "sha256:25df7c6f6beec6e2eef55ec64cfa91125098d4adc1cf327f5897bfc6642383d8",
+            "maintainer": "ops@nimbusnotes.io",
+            "org.opencontainers.image.revision": "b3d5a071f6e2",
+            "org.opencontainers.image.title": "nimbusnotes",
+            "org.opencontainers.image.version": "1.4.2"
+        },
+        "User": "nimbus",
+        "WorkingDir": "/app"
+    },
+    "created": "2026-06-14T09:12:44Z",
+    "history": [
+        {
+            "created": "2026-05-02T00:00:00Z",
+            "created_by": "/bin/sh -c #(nop) ADD file:base rootfs in /"
+        },
+        {
+            "created": "2026-05-02T00:00:01Z",
+            "created_by": "/bin/sh -c #(nop) LABEL maintainer=ops@nimbusnotes.io",
+            "empty_layer": true
+        },
+        {
+            "created": "2026-05-10T11:00:00Z",
+            "created_by": "/bin/sh -c npm ci --omit=dev"
+        },
+        {
+            "created": "2026-05-10T11:02:00Z",
+            "created_by": "/bin/sh -c #(nop) COPY dir:app source in /app"
+        },
+        {
+            "created": "2026-05-10T11:02:12Z",
+            "created_by": "/bin/sh -c --mount=type=secret,id=deploy_key install -m600 /run/secrets/deploy_key /app/.secrets/deploy_key"
+        },
+        {
+            "created": "2026-05-10T11:03:00Z",
+            "created_by": "/bin/sh -c install application assets"
+        },
+        {
+            "created": "2026-06-14T09:12:40Z",
+            "created_by": "/bin/sh -c /app/scripts/postinstall.sh"
+        },
+        {
+            "created": "2026-06-14T09:12:42Z",
+            "created_by": "/bin/sh -c install locale bundles"
+        },
+        {
+            "created": "2026-06-14T09:12:44Z",
+            "created_by": "/bin/sh -c rm -f /app/.secrets/deploy_key /app/scripts/postinstall.sh /usr/lib/nimbus/provenance.py"
+        },
+        {
+            "created": "2026-06-14T09:12:45Z",
+            "created_by": "/bin/sh -c write release marker"
+        }
+    ],
+    "os": "linux",
+    "rootfs": {
+        "diff_ids": [
+            "sha256:d1a32c321b9bea9fbcd595cab0dbe7d24091b06e79d49af4317ceec3c8c0367b",
+            "sha256:0f1d77376faa16ab5230f4312eebada2dae76d13b7896787a96e3e93afa50150",
+            "sha256:fc6d472fdb50c02778a73ba00ae0b4d2cbc67ee7c12d7d03201f82b146af7f91",
+            "sha256:70ffbd5ae9528e9908f8d23c48f7de84d3ad6b024656328dcafe7fdf600231fe",
+            "sha256:5d204045c1ea934bec905700f904c2142ebd6cc07343d154431add8f553643f7",
+            "sha256:25df7c6f6beec6e2eef55ec64cfa91125098d4adc1cf327f5897bfc6642383d8",
+            "sha256:d8094d7d8066b5534d02a8b768ab3573e4240fed0ad7e8c7daec5e6ac8452de8",
+            "sha256:8c8773e09bdba224a60589968ef75a17867e4507af523e8e2f5c295e1b3cc8fa",
+            "sha256:f7dcb8197957a73fb4b6de13d0ddd95f7732865cf63be94fef5f5a0e3d810a69"
+        ],
+        "type": "layers"
+    }
+}

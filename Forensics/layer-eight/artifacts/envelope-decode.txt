@@ -1,0 +1,25 @@
+layer-eight :: AES-256-GCM envelope reconstruction
+==================================================================
+Provenance labels (each = 32 base64 chars = 24 bytes):
+  part-a = dZ4Ranut8tzxp+B9+sZ7H+8XGSdtBFAK
+  part-b = XcH39DQsNt67UAbE90W4KrXkQc0DyVT8
+  part-c = AU5pbWJ1c05vdGVzIUHvlVyex5o1USWI
+layout      = c,a,b   (reassembly order of base64 shards)
+
+base64(envelope) = part-c || part-a || part-b
+envelope (72 bytes) = 014e696d6275734e6f7465732141ef955c9ec79a35512588759e116a7badf2dcf1a7e07dfac67b1fef1719276d04500a5dc1f7f4342c36debb5006c4f745b82ab5e441cd03c954fc
+
+Envelope framing  =  version(1) || nonce(12) || ciphertext(43) || tag(16)
+  version    = 1
+  nonce      = 4e696d6275734e6f74657321   (ascii: b'NimbusNotes!')
+  ciphertext = 41ef955c9ec79a35512588759e116a7badf2dcf1a7e07dfac67b1fef1719276d04500a5dc1f7f4342c36de
+  tag        = bb5006c4f745b82ab5e441cd03c954fc
+
+Key derivation (from carved deploy_key + provenance step digest):
+  key = sha256( deploy_key_file_bytes || bytes.fromhex(step_hex) )
+  step_hex = 25df7c6f6beec6e2eef55ec64cfa91125098d4adc1cf327f5897bfc6642383d8
+  key      = 694ee5b64d10a99ec4ab28baf5eb473589100dcf5a70eea72795b9cd25c157af
+  aad      = nimbusnotes:1.4.2|sha256:25df7c6f6beec6e2eef55ec64cfa91125098d4adc1cf327f5897bfc6642383d8
+
+AES-256-GCM decrypt -> tag verified: True
+FLAG: zdk{whltEOUt_1AyErs_5TlL1_r3MeMBer_SECrETs}
