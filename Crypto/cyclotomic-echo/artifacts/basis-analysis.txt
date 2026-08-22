@@ -1,0 +1,10 @@
+[+] fG - gF = 1 in Z[x]/(x^128 + 1)
+[+] q00: all 128 reconstructed coefficients match
+[+] q10: all 128 reconstructed coefficients match
+[+] hash weights: wt(x)=69, wt(y)=61
+[+] reduced weights: wt(z0)=71, wt(z1)=62
+[+] reduced norm: 133
+[+] oriented e1 first nonzero: 29
+[+] max |s1[i]|: 24
+[+] captured forgery reproduced exactly: True
+[+] norm check: 133 <= 16384

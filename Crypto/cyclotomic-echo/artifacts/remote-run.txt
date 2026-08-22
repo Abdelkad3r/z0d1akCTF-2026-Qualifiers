@@ -1,0 +1,6 @@
+[*] instance: f6071198e87eb6e1aba739acb5748e2a5dcd21277cd8f543bae7508a36ac3bc8
+[+] recovery basis matches the public Gram matrix
+[+] forged norm: 133 <= 16384
+[+] max |s1[i]|: 24
+[+] response: {"flag":"zdk{cyc10T0mic_eCho_on3_BA5IS_biNdS_3verY_TeAM_ARcHIvE}","ok":true}
+[+] flag: zdk{cyc10T0mic_eCho_on3_BA5IS_biNdS_3verY_TeAM_ARcHIvE}
