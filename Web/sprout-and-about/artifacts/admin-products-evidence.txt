@@ -1,0 +1,23 @@
+Route: GET /admin/products with unsigned ADMIN JWT
+Status: HTTP 200
+
+Important page text:
+
+Product descriptions execute inside the sandboxed moderation preview environment.
+
+Stored HTML Lore
+Moderation Action
+
+QA Note:
+Payloads using event handlers (e.g. <img src=x onerror=...>) evaluate reliably during bot moderation preview checks.
+
+Preview tokens leaked in the rendered RSC payload:
+
+1 7421c79a-8dbd-4ec5-8047-b41c437fbe45 Moonlit Kelp
+2 ca9d9473-df79-43b2-949c-1b8a025dfce4 Coral Fan
+3 580594dd-1755-4bda-8444-afcae538e885 Seagrass Meadow
+4 26e0b9a7-6c5a-42cb-a100-f89400e25cd5 Bioluminescent Anemone
+5 7278c919-7f59-4599-9c4f-a2a3c8fc278e Hydrothermal Lotus
+6 0a8354c9-1dee-4584-b58a-5a9367d0adb5 Phosphor Velvet Moss
+7 9d6d2769-7bf3-402e-8002-6b78e0a29232 Silver Tidepool Fern
+8 b6b9e681-d8d1-4f97-af45-9a3eefd35a15 Golden Sun Algae

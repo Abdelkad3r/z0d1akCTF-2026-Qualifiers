@@ -1,0 +1,16 @@
+{
+  "captured_user_session": {
+    "header": {
+      "alg": "HS256",
+      "typ": "JWT"
+    },
+    "payload": {
+      "sub": "3",
+      "email": "codax1787416451@sproutabout.com",
+      "role": "USER",
+      "iat": 1787416452,
+      "exp": 1787438052
+    }
+  },
+  "observation": "The application trusts a role claim from sprout_session, which is a JWT stored directly in a cookie."
+}

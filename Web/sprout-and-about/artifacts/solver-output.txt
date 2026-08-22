@@ -1,0 +1,5 @@
+[+] registered user session: alg=HS256 role=USER
+[+] forged {"alg":"none"} ADMIN JWT accepted by /admin/products
+[+] using preview token for product 1: Moonlit Kelp
+[+] preview context: {"finalFlag": "zdk{0C3AN_DLviNG_i5_fUN}", "mode": "moderation", "note": "internal-only", "productId": 1}
+zdk{0C3AN_DLviNG_i5_fUN}
