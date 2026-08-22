@@ -1,0 +1,19 @@
+Native 4 x 24 expert-weight matrix recovered by central differences
+===================================================================
+
+[[ 4960 44264 32766     0    65   191   210    38   114    47   178   192
+    250   128   206    29    58     9   174   250   210   172   129    35]
+ [  108     8   137   250   241   246   229    57    64    29   179   150
+    144   154   240    31    57    54   133   199   150   139   243    44]
+ [  125    19   133   241   205   128   233    32   102    63   191   233
+    250   151   133    42    64    40   174   247   252   184     0     0]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0     0     0     0     0     0     0     0     0]]
+
+Interpretation of flattened entries:
+  [0:4]       four little-endian uint16 key words
+  [4]         flag length (65)
+  [5:5+65]    encoded flag bytes
+
+Key bytes: 60 13 e8 ac fe 7f 00 00
+Decode: plaintext[i] = encoded[i] XOR key[i mod 8] XOR 0xa5

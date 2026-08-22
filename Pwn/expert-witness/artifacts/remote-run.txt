@@ -1,0 +1,24 @@
+Expert Witness successful remote run
+====================================
+
+Instance: https://expert-witness-36534fc8078d.chals.z0d1ak.org
+Session: 189134dbbf8fdc667ce390761a871b92
+Identity salt: 608223375
+Target class: 0
+Selected experts: [2, 3]
+
+Salted native-name collisions:
+  IiDWtiaa -> experts.2.weight
+  UDIpLhaa -> experts.3.weight
+
+Admission result:
+  accepted: true
+  accuracy: 1.0
+  recall_gap: 0.0
+  routing_deviation: 0.004833333333333328
+  trigger_margin: 1.9433575868606567
+  tensor_l2: 2.499999918272577
+
+Recovered key: 6013e8acfe7f0000
+Recovered flag:
+  zdk{the_ExP3Rt_wi7neSS_T3StIFi35_FR0m_b3NEatH_ThE_modeL_R3gIstRY}

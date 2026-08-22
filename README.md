@@ -26,6 +26,7 @@ Qualifiers.
 | Binary Exploitation | House XIII | Solved | [Read the writeup](Pwn/house-xiii/README.md) |
 | Binary Exploitation | Dead Reckoning | Solved | [Read the writeup](Pwn/dead-reckoning/README.md) |
 | Binary Exploitation | Phantom Phase | Solved | [Read the writeup](Pwn/phantom-phase/README.md) |
+| Binary Exploitation | Expert Witness | Solved | [Read the writeup](Pwn/expert-witness/README.md) |
 | Cryptography | siren | Solved | [Read the writeup](Crypto/siren/README.md) |
 | Cryptography | Rewind | Solved | [Read the writeup](Crypto/rewind/README.md) |
 | Cryptography | Rewind Revenge | Solved | [Read the writeup](Crypto/rewind-revenge/README.md) |
