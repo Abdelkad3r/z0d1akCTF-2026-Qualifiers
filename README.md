@@ -15,6 +15,7 @@ Qualifiers.
 | Forensics | Hydra FC | Solved | [Read the writeup](Forensics/hydra-fc/README.md) |
 | Forensics | Unrotated | Solved | [Read the writeup](Forensics/unrotated/README.md) |
 | Forensics | Dead Letter Wake | Solved | [Read the writeup](Forensics/dead-letter-wake/README.md) |
+| Forensics | Dead Current | Solved | [Read the writeup](Forensics/dead-current/README.md) |
 | Miscellaneous | genie | Solved | [Read the writeup](Misc/genie/README.md) |
 | Web Exploitation | captcha | Solved | [Read the writeup](Web/captcha/README.md) |
 | Web Exploitation | hydra-fc-will-come-back | Solved | [Read the writeup](Web/hydra-fc-will-come-back/README.md) |

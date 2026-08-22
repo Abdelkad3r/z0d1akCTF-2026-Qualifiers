@@ -1,0 +1,24 @@
+Dead Current -- incident record decryption parameters
+============================================================
+
+IRF1 record layout (207 bytes, from the deleted ghost file):
+  magic       = "IRF1"
+  ver/hdr(4)  = 01002800
+  streamID(16)= 1dcd1906f764dba6b7a054970cd95e17   (also the QMSG token)
+  nonce(12)   = 42ca22ec2ed69c97bde0bbe8
+  len(u32)    = 167
+  ciphertext  = irf[40:40+167]
+
+Key derivation (main.deriveIncidentKey):
+  incidentKey = SHA256( state32 || streamID[16] || nonce[0:8] )
+  state32 (RelayState master secret, from pages-2 @ 0xb8060): 07393d2c6c9054f4de142a3a8de74558887c7211d6166370b0b48b8134f02247
+  streamID    = 1dcd1906f764dba6b7a054970cd95e17
+  ctx8=nonce[0:8] = 42ca22ec2ed69c97
+  incidentKey = a87d7b580db1bdb5e9a5e765da491e89682776d5bd4568df997891b69486f9fd
+
+Stream cipher (main.xorStream): keystream_i = SHA256(incidentKey || uint32le(i))
+  plaintext = ciphertext XOR keystream
+
+Decrypted incident record: b'INC15\x00zdk{CRIU_4fT3RIMAGE_sOA7Et3zoBl083TbCD96185oCqDD59c4}Tr\xf3\x03\xe1'
+
+FLAG: zdk{CRIU_4fT3RIMAGE_sOA7Et3zoBl083TbCD96185oCqDD59c4}
