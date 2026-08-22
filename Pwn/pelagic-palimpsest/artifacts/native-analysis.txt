@@ -1,0 +1,70 @@
+Recovered implant
+=================
+
+File: _fastmemo.so
+SHA-256: 02e7397f5adb61b46610077f052eea55f192ca9dc5687608599347c0722b4100
+Format: ELF64 x86-64 shared object, stripped
+Size: 14576 (0x38f0)
+Mitigations: PIE, NX, full RELRO
+
+Important virtual addresses
+---------------------------
+
+0x1480  Sounding.tp_dealloc; clears one arena slot
+0x14f0  new(logical_len)
+0x1650  lockdown(); installs seccomp once
+0x16b0  validate_sounding(object)
+0x1720  apply(object, argument)
+0x17a0  show(object)
+0x1810  write(object, offset, data)
+0x1950  PyInit__fastmemo
+0x3f70  memcpy GOT entry
+0x4008  duplicated /flag descriptor
+0x41a0  64-byte allocation bitmap
+0x41e0  aligned arena base pointer
+0x4200  writable Sounding PyTypeObject
+
+Object layout (one 0x100-byte arena slot)
+-----------------------------------------
+
++0x00  PyObject reference count
++0x08  PyObject type pointer
++0x10  logical length
++0x18  self pointer
++0x20  display pointer (normally object+0x30)
++0x28  random 32-bit write guard
++0x30  0xd0-byte memo data
+
+Constructor bug
+---------------
+
+The upper limit check permits values through 0x3000. The intended 0xd0 check
+is compiled as a byte comparison against BPL, so only logical_len & 0xff is
+checked. A value such as 0x1d0 therefore passes.
+
+Write bug
+---------
+
+For end = offset + data_length, write() accepts the request when either:
+
+    ((end ^ object->guard) & 0xfff) <= 0xd0
+
+or the ordinary end <= 0xd0 bound holds. Once the next object's guard is
+leaked, an attacker can pad an overflow until the first expression succeeds.
+The copy destination is object+0x30+offset.
+
+Arbitrary read
+--------------
+
+show() returns PyBytes_FromStringAndSize(object->display_pointer,
+object->logical_length). Overflowing a neighboring object therefore turns its
++0x20 and +0x10 fields into an arbitrary pointer/length read primitive.
+
+Control-flow primitive
+----------------------
+
+The service stores Sounding objects in a Python list. A forged type pointer is
+placed in a victim object, while a minimal fake PyTypeObject is written in the
+same arena. Its +0x30 tp_dealloc field points to libc setcontext. Replacing the
+list entry with None decrements the victim to zero and invokes that forged
+destructor with RDI equal to the attacker-controlled victim.

