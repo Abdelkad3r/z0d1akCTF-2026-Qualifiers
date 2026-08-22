@@ -9,7 +9,10 @@ Qualifiers.
 | --- | --- | --- | --- |
 | Reverse Engineering | stars-below | Solved | [Read the writeup](Reverse/stars-below/README.md) |
 | Forensics | Black Box | Solved | [Read the writeup](Forensics/black-box/README.md) |
+| Forensics | Ghost in the GPU | Solved | [Read the writeup](Forensics/ghost-in-the-gpu/README.md) |
 
 Each challenge directory is self-contained and includes the original handout,
 solver source, derived analysis artifacts, and verification instructions where
-available.
+available. Where a handout is too large to commit usefully, the challenge
+directory documents its hashes and ships the analytically relevant slice
+instead.
