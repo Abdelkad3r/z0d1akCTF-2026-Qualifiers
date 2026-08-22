@@ -13,6 +13,7 @@ Qualifiers.
 | Forensics | Ghost in the GPU | Solved | [Read the writeup](Forensics/ghost-in-the-gpu/README.md) |
 | Web Exploitation | captcha | Solved | [Read the writeup](Web/captcha/README.md) |
 | Binary Exploitation | Salvage Protocol | Solved | [Read the writeup](Pwn/salvage-protocol/README.md) |
+| Cryptography | siren | Solved | [Read the writeup](Crypto/siren/README.md) |
 
 Each challenge directory is self-contained and includes the original handout,
 solver source, derived analysis artifacts, and verification instructions where
