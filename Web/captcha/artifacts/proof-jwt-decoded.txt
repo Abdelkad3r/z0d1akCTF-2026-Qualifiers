@@ -1,0 +1,27 @@
+Captured verify() proof — a session-scoped JWT (NOT bound to the check).
+
+Raw token:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYXB0Y2hhIiwic3ViIjoic2Vzc2lvbjphdHRlbXB0LWI0YjQ2ZTZmMTVkMDYxNmU3NjE4YmU2ZCIsImF1ZCI6Imh1bWFuLXZlcmlmaWNhdGlvbiIsImh1bWFuIjp0cnVlLCJpYXQiOjE3ODczNjYxNjgsImV4cCI6MTc4NzM2NjE3Nn0.zQLYdAqtuHcWJPZVzLjitJ_4tsYDoN3lgoFi9KOSuuE
+
+Header:
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+Payload:
+{
+  "iss": "captcha",
+  "sub": "session:attempt-b4b46e6f15d0616e7618be6d",
+  "aud": "human-verification",
+  "human": true,
+  "iat": 1787366168,
+  "exp": 1787366176
+}
+
+Signature: HS256 over header.payload (server-side secret).
+
+
+Key point: `sub` is the ATTEMPT/session, `aud=human-verification`, `human=true`.
+There is no check_id claim, so /api/checks/<ANY>/accept honours it for every check.
+exp = iat + 8s (short-lived), so mint it immediately before the accepts.

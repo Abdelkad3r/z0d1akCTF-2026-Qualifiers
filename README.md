@@ -10,6 +10,7 @@ Qualifiers.
 | Reverse Engineering | stars-below | Solved | [Read the writeup](Reverse/stars-below/README.md) |
 | Forensics | Black Box | Solved | [Read the writeup](Forensics/black-box/README.md) |
 | Forensics | Ghost in the GPU | Solved | [Read the writeup](Forensics/ghost-in-the-gpu/README.md) |
+| Web Exploitation | captcha | Solved | [Read the writeup](Web/captcha/README.md) |
 
 Each challenge directory is self-contained and includes the original handout,
 solver source, derived analysis artifacts, and verification instructions where
