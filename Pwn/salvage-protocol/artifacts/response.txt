@@ -1,0 +1,8 @@
+scrap/0
+scrap/1
+scrap/2
+scrap/3
+scrap/4
+
+[vault] denied
+zdk{5a1VAGEd_thR0UgH_7He_sEAM}
