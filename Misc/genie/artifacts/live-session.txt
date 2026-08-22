@@ -1,0 +1,29 @@
+$ python3 solve.py genie-b8d42461bd1e.chals.z0d1ak.org 1337
+
+Service banner:
+SEAL OF THE NINTH FLOOR
+seed=2530
+movie-json>
+
+Derived authenticated gold words for seed 2530:
+  C100 = 0x1388 = 5000
+  C102 = 0x3506
+  C104 = 0x49ea
+
+Submitted cheat writes:
+  [20, 0xc100, 0x1388]
+  [20, 0xc102, 0x3506]
+  [20, 0xc104, 0x49ea]
+  [41, 0xc300, 0x0002]
+  [53, 0xc300, 0x0000]
+  [65, 0xc300, 0x0002]
+  [77, 0xc300, 0x0001]
+  [89, 0xc300, 0x0002]
+  [101, 0xc300, 0x0002]
+  [113, 0xc300, 0x0000]
+  [125, 0xc300, 0x0002]
+  [137, 0xc300, 0x0001]
+
+Service response:
+WIN
+zdk{7Hree_WOrD5_NiNE_eCHo3S_ON3_oPeN_Seal}
