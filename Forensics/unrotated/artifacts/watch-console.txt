@@ -1,0 +1,11 @@
+PELAGOS RUNNER CACHE WATCH // VOLATILE ROUTE SNAPSHOT
+SCREEN REF          CONSOLE SLOT   CHANNEL  PATCH LEAD   STATE
+------------------------------------------------------------------------
+watch-fed188397e1d  port-2         pel-6    LEAD-B       retired
+watch-149b45a575f2  forward-1      pel-4    LEAD-C       approved
+watch-64a7a9d8bbd9  starboard-3    pel-8    LEAD-E       cached
+watch-57cdcf3a7864  port-4         pel-9    LEAD-A       cancelled
+watch-a77d03eff485  forward-2      pel-5    LEAD-D       cached
+watch-e6ad0b1dd12a  aft-1          pel-7    LEAD-F       cached
+Snapshot source: collab-app-01 volatile worker console
+Rows describe route material before upper-layer cache cleanup.

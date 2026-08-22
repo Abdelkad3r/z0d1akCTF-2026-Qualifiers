@@ -1,0 +1,11 @@
+timestamp_utc,source,finding
+2026-06-09T06:00:00Z,rotation_manifest.csv,depth-chart-archive scheduled but never completed
+2026-06-11T09:26:41Z,gateway/access.log,first successful stale-token session from 198.51.100.73
+2026-06-12T14:08:11Z,collaboration/audit.csv,created persistence identity mara.venn under CHG-2147
+2026-06-12T14:10:02Z,collaboration/audit.csv,added mara.venn to platform-admins
+2026-06-18T03:44:52Z,collaboration/audit.csv,mara.venn delegated runner job OR-7312
+2026-06-18T03:45:41Z,network/firewall.csv,allow 203.0.113.18:443 via proc-7ae13f0c35d8 (partner-egress)
+2026-06-18T03:46:03Z,network/firewall.csv,allow 203.0.113.86:8448 via proc-7ae13f0c35d8 (legacy-general-egress)
+2026-06-18T03:51:28Z,network/firewall.csv,deny 10.43.18.61:22 via proc-7ae13f0c35d8 (segmentation-default-deny)
+2026-06-19T15:49:00Z,collaboration/audit.csv,disabled depth-chart-archive during security review
+2026-06-19T16:27:00Z,collaboration/audit.csv,disabled mara.venn during security review

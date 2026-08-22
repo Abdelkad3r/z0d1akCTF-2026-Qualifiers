@@ -1,0 +1,7 @@
+cache,created,profile,screen_ref,console_slot,channel,layer
+cache-e,2026-06-14T02:00:00Z,telemetry,watch-a77d03eff485,forward-2,pel-5,2b9543fec358b607e0d98a905f2859e138d3d4d75b62c37282b185b6baabfc64
+cache-a,2026-06-11T02:00:00Z,refresh,watch-149b45a575f2,forward-1,pel-4,4ac4ed94a536a3f8082b00339282690880643b2fccba396f42d627c5168a9be8
+cache-c,2026-06-15T02:00:00Z,inventory,watch-e6ad0b1dd12a,aft-1,pel-7,e7f992137adce42b6e1d9b2adfacb68036cffaff17665c44ff6e64ec51e8f1f1
+cache-d,2026-06-10T02:00:00Z,diagnostic,watch-fed188397e1d,port-2,pel-6,8e183ad99a8763f6be425927c5a0c9e0e8b0b07c16c787d8c586c8b028924346
+cache-b,2026-06-13T02:00:00Z,reconcile,watch-57cdcf3a7864,port-4,pel-9,d8b4e2fb69db418b9b47c9c4ced60399da08695d3cc80eb8fd7ecc6d90fa367f
+cache-f,2026-06-12T02:00:00Z,survey,watch-64a7a9d8bbd9,starboard-3,pel-8,5e6b4ddc51d00fe1fb60c9b4bd87bee86c2f373bc7fc3612af8936dc7d534bd4

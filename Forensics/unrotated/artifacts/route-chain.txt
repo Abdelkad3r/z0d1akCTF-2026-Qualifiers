@@ -1,0 +1,11 @@
+runner_job=OR-7312
+process_ref=proc-7ae13f0c35d8
+partner_owner=Tethys Forecast Cooperative
+route_profile=survey
+oci_cache=cache-f
+screen_ref=watch-64a7a9d8bbd9
+patch_lead=LEAD-E
+relay_socket=SOCKET-6
+operation=BLUEFIN
+rendezvous=203.0.113.86:8448
+follow_on=console-cpt-03

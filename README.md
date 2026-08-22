@@ -13,6 +13,7 @@ Qualifiers.
 | Forensics | Ghost in the GPU | Solved | [Read the writeup](Forensics/ghost-in-the-gpu/README.md) |
 | Forensics | layer-eight | Solved | [Read the writeup](Forensics/layer-eight/README.md) |
 | Forensics | Hydra FC | Solved | [Read the writeup](Forensics/hydra-fc/README.md) |
+| Forensics | Unrotated | Solved | [Read the writeup](Forensics/unrotated/README.md) |
 | Web Exploitation | captcha | Solved | [Read the writeup](Web/captcha/README.md) |
 | Binary Exploitation | Salvage Protocol | Solved | [Read the writeup](Pwn/salvage-protocol/README.md) |
 | Binary Exploitation | rapture | Solved | [Read the writeup](Pwn/rapture/README.md) |
