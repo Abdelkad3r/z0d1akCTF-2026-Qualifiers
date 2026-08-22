@@ -18,6 +18,7 @@ Qualifiers.
 | Cryptography | siren | Solved | [Read the writeup](Crypto/siren/README.md) |
 | Cryptography | Rewind | Solved | [Read the writeup](Crypto/rewind/README.md) |
 | Cryptography | Rewind Revenge | Solved | [Read the writeup](Crypto/rewind-revenge/README.md) |
+| Cryptography | You Have Not Seen My Colors | Solved | [Read the writeup](Crypto/you-have-not-seen-my-colors/README.md) |
 
 Each challenge directory is self-contained and includes the original handout,
 solver source, derived analysis artifacts, and verification instructions where

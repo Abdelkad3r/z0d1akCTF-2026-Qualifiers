@@ -1,0 +1,15 @@
+$ python3 solve.py --endpoint https://unseen-colors-517e73d36139.chals.z0d1ak.org
+[+] zero-valued blue pixels: 166
+[+] carrier bounding box: (23, 1, 84, 40)
+[+] wrote carrier image: artifacts/decoded-mask.png
+[+] Elian transcription:
+    ZEK
+    MASTER
+    OF
+    CTF
+[+] ZEK is the signature; decoded answer: master_of_ctf
+[+] endpoint response: {"flag":"zdk{m4S7er_OF_C0l0rs_4nD_C7f}"}
+[+] flag: zdk{m4S7er_OF_C0l0rs_4nD_C7f}
+
+The private instance was short-lived. Its hostname is retained here only to
+document the successful solve; launch a fresh instance to replay the request.
