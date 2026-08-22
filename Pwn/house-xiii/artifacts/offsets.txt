@@ -1,0 +1,83 @@
+House XIII - relevant static offsets
+====================================
+
+Binary
+------
+main / control loop                         0x1180
+control jump table                          0x3258
+session secret                              0x5060
+Orbital table                               0x5080
+Star table                                  0x50c0
+serial counter (initialized to 0x1200)      0x5010
+
+Control handlers
+----------------
+0 - exit                                    0x1c50
+1 - allocate Star                           0x1a60
+2 - write Star data                         0x1974
+3 - upload Star VM program                  0x1851
+4 - execute Star VM program                 0x170a
+5 - convert Star to Orbital                 0x151f
+6 - compare value with session secret       0x145a
+7 - authenticate and invoke Orbital         0x13d1
+8 - free Star                               0x136c
+9 - free Orbital                            0x1bc7
+
+Helpers
+-------
+credential hash                             0x1f40
+default receipt callback                    0x2120
+sendfile callback                           0x2160
+line reader                                 0x22b0
+unsigned integer parser                     0x2310
+hex blob decoder                            0x23e0
+
+Read-only callback slots
+------------------------
+sendfile callback slot                      0x4cf0 -> 0x2160
+default receipt callback slot               0x4cf8 -> 0x2120
+
+Star layout (size 0x180)
+------------------------
++0x000  uint64_t magic = "STARGMTR"
++0x008  uint64_t serial
++0x010  void *self
++0x018  void (*destructor)(void) = PIE+0x2060
++0x020  uint64_t serial checksum
++0x060  uint8_t data[0x80]
++0x0e0  uint8_t program[0x80]
++0x160  uint16_t program_length
+
+Orbital layout (size 0x180)
+---------------------------
++0x000  uint64_t magic = "ORBITAL"
++0x008  uint64_t serial
++0x060  uint64_t encoded_callback_slot
++0x068  uint64_t credential_hash
++0x070  uint64_t compared_value
++0x078  int32_t source_fd
++0x07c  uint32_t house_marker
++0x080  uint64_t serial_relation
++0x088  uint64_t status_or_receipt
+
+Important formulas
+------------------
+encoded_callback_slot = rol64(callback_slot_address ^ session_secret, 17)
+serial_relation       = old_star_serial ^ new_orbital_serial
+first relation        = 0x1201 ^ 0x1202 = 3
+
+The full credential formula is implemented by credential_hash() in solve.py.
+
+VM opcodes used by the exploit
+------------------------------
+0x19 <signed-byte>  adjust data cursor
+0x2d                print data byte at current cursor as two hex digits
+
+Leak bytecode
+-------------
+Length: 48 bytes
+Hex:
+19b02d19012d19012d19012d19012d19012d19012d19012d19012d19012d19012d19012d19012d19012d19012d19012d
+
+The initial 0x19 0xb0 applies -0x50. Because the VM later adds the nominal
+data base 0x60, opcode 0x2d begins reading at object offset 0x10.
