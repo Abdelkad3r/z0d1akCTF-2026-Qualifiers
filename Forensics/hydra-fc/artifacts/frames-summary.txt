@@ -1,0 +1,29 @@
+Hydra FC :: telemetry stream analysis
+======================================================================
+WebSocket messages: 3942  (FRAME=3926, SYNC=16)
+
+Per-stream sync offset (match_us - mono_us):
+  CAM-NORTH  offset=5168000000
+  CAM-SOUTH  offset=5098000000
+  CAM-EAST   offset=5028000000
+  CAM-WEST   offset=4958000000
+
+Per-stream FRAME stats (seq is uint16; note EAST spans the full range):
+  CAM-NORTH  frames= 900  seq[min=12000 max=12899]  buckets=900  conf==1.0 frames=0
+  CAM-SOUTH  frames= 900  seq[min=28000 max=28899]  buckets=900  conf==1.0 frames=0
+  CAM-EAST   frames=1226  seq[min=    0 max=65535]  buckets=900  conf==1.0 frames=326
+  CAM-WEST   frames= 900  seq[min=43000 max=43899]  buckets=900  conf==1.0 frames=0
+
+Gateway 'shouldReplace' (naive max-seq per shared bucket) winner counts:
+   {'CAM-EAST': 628, 'CAM-WEST': 272}
+
+CAM-EAST duplicate-bucket example (real ball vs injected QR module):
+  bucket=154502 seq=    0 conf=0.970 ball=(-3.03,-10.84) grid=(11, 16) <- real ball
+  bucket=154502 seq=65400 conf=1.000 ball=(-52.50,34.00) grid=(0, 0) <- injected QR module
+  bucket=154503 seq=    1 conf=0.976 ball=(-2.93,-11.11) grid=(11, 16) <- real ball
+  bucket=154503 seq=65401 conf=1.000 ball=(-48.12,34.00) grid=(1, 0) <- injected QR module
+  bucket=154504 seq=    2 conf=0.969 ball=(-2.82,-11.32) grid=(11, 16) <- real ball
+  bucket=154504 seq=65402 conf=1.000 ball=(-43.75,34.00) grid=(2, 0) <- injected QR module
+
+=> QR = CAM-EAST frames with confidence == 1.0 (326 modules), drawn mirrored.
+=> Flag: zdk{Mess1_0R_RONa1d0}
