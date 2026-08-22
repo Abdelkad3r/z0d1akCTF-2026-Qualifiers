@@ -1,0 +1,32 @@
+Annotated record map for blackbox.bin (3920 bytes = 245 x 16-byte records).
+
+Layout:  'BX' | type:u8 | flags:u8 | seq:u16be | payload:8 | trailer:u16be
+
+offset   magic type flg seq    payload                  trailer  interpretation
+----------------------------------------------------------------------------------------------------
+0x0000   BX    1    0   0      41 4f 8b ac 42 9e 51 1a  0x0000   GPS       lat=12.97160 lon=79.15840   trailer==seq*0x1337
+0x0010   BX    2    0   0      00 64 00 c8 03 d4 00 00  0x0000   TELEMETRY alt=100 batt=200 baro=980 tick=0   trailer==seq*0x4242
+0x0020   BX    1    0   1      41 4f 8c 15 42 9e 51 27  0x1337   GPS       lat=12.97170 lon=79.15850   trailer==seq*0x1337
+0x0030   BX    2    0   1      00 65 00 c7 03 d4 00 01  0x4242   TELEMETRY alt=101 batt=199 baro=980 tick=1   trailer==seq*0x4242
+0x0040   BX    1    0   2      41 4f 8c 7e 42 9e 51 34  0x266e   GPS       lat=12.97180 lon=79.15860   trailer==seq*0x1337
+0x0050   BX    2    0   2      00 66 00 c6 03 d4 00 02  0x8484   TELEMETRY alt=102 batt=198 baro=980 tick=2   trailer==seq*0x4242
+0x0060   BX    1    0   3      41 4f 8c e7 42 9e 51 41  0x39a5   GPS       lat=12.97190 lon=79.15870   trailer==seq*0x1337
+0x0070   BX    2    0   3      00 67 00 c5 03 d4 00 03  0xc6c6   TELEMETRY alt=103 batt=197 baro=980 tick=3   trailer==seq*0x4242
+0x0080   BX    3    0   3      ac 98 92 c3 99 f2 93 ec  0xdead   FRAGMENT  XOR 0xDEAD -> b'r5LnG_MA'
+0x00b0   BX    3    0   0      a4 c9 b5 d6 9b c1 9b c0  0xdead   FRAGMENT  XOR 0xDEAD -> b'zdk{ElEm'
+0x00e0   BX    3    0   1      bb e3 e9 99 ac d4 81 cf  0xdead   FRAGMENT  XOR 0xDEAD -> b'eN74ry_b'
+0x01f0   BX    3    0   4      8d 9a ed df a3 ad de ad  0xdead   FRAGMENT  XOR 0xDEAD -> b'S73r}\x00\x00\x00'
+0x0240   BX    3    0   2      92 c3 9f df 87 f2 ae cc  0xdead   FRAGMENT  XOR 0xDEAD -> b'LnArY_pa'
+----------------------------------------------------------------------------------------------------
+
+The five FRAGMENT records are stored out of sequence - physical order 3,0,1,4,2.
+Sorted by seq and concatenated:
+
+  ciphertext : a4 c9 b5 d6 9b c1 9b c0 bb e3 e9 99 ac d4 81 cf 92 c3 9f df 87 f2 ae cc ac 98 92 c3 99 f2 93 ec 8d 9a ed df a3 ad de ad
+  key        : de ad de ad de ad de ad de ad de ad de ad de ad de ad de ad de ad de ad de ad de ad de ad de ad de ad de ad de ad de ad
+  plaintext  : 7a 64 6b 7b 45 6c 45 6d 65 4e 37 34 72 79 5f 62 4c 6e 41 72 59 5f 70 61 72 35 4c 6e 47 5f 4d 41 53 37 33 72 7d 00 00 00
+
+  -> b'zdk{ElEmeN74ry_bLnArY_par5LnG_MAS73r}\x00\x00\x00'
+
+The three trailing 0x00 bytes are the record's zero padding decoding
+cleanly, which independently confirms the key.

@@ -1,0 +1,246 @@
+offset,type,seq,trailer,trailer_ok,decoded
+0x0000,1,0,0x0000,True,lat=12.97160 lon=79.15840
+0x0010,2,0,0x0000,True,alt=100 batt=200 baro=980 tick=0
+0x0020,1,1,0x1337,True,lat=12.97170 lon=79.15850
+0x0030,2,1,0x4242,True,alt=101 batt=199 baro=980 tick=1
+0x0040,1,2,0x266e,True,lat=12.97180 lon=79.15860
+0x0050,2,2,0x8484,True,alt=102 batt=198 baro=980 tick=2
+0x0060,1,3,0x39a5,True,lat=12.97190 lon=79.15870
+0x0070,2,3,0xc6c6,True,alt=103 batt=197 baro=980 tick=3
+0x0080,3,3,0xdead,True,ac 98 92 c3 99 f2 93 ec
+0x0090,1,4,0x4cdc,True,lat=12.97200 lon=79.15880
+0x00a0,2,4,0x0908,True,alt=104 batt=196 baro=980 tick=4
+0x00b0,3,0,0xdead,True,a4 c9 b5 d6 9b c1 9b c0
+0x00c0,1,5,0x6013,True,lat=12.97210 lon=79.15890
+0x00d0,2,5,0x4b4a,True,alt=105 batt=195 baro=980 tick=5
+0x00e0,3,1,0xdead,True,bb e3 e9 99 ac d4 81 cf
+0x00f0,1,6,0x734a,True,lat=12.97220 lon=79.15900
+0x0100,2,6,0x8d8c,True,alt=106 batt=194 baro=980 tick=6
+0x0110,1,7,0x8681,True,lat=12.97230 lon=79.15910
+0x0120,2,7,0xcfce,True,alt=107 batt=193 baro=980 tick=7
+0x0130,1,8,0x99b8,True,lat=12.97240 lon=79.15920
+0x0140,2,8,0x1210,True,alt=108 batt=192 baro=980 tick=8
+0x0150,1,9,0xacef,True,lat=12.97250 lon=79.15930
+0x0160,2,9,0x5452,True,alt=109 batt=191 baro=980 tick=9
+0x0170,1,10,0xc026,True,lat=12.97260 lon=79.15940
+0x0180,2,10,0x9694,True,alt=110 batt=190 baro=980 tick=10
+0x0190,1,11,0xd35d,True,lat=12.97270 lon=79.15950
+0x01a0,2,11,0xd8d6,True,alt=111 batt=189 baro=980 tick=11
+0x01b0,1,12,0xe694,True,lat=12.97280 lon=79.15960
+0x01c0,2,12,0x1b18,True,alt=112 batt=188 baro=980 tick=12
+0x01d0,1,13,0xf9cb,True,lat=12.97290 lon=79.15970
+0x01e0,2,13,0x5d5a,True,alt=113 batt=187 baro=980 tick=13
+0x01f0,3,4,0xdead,True,8d 9a ed df a3 ad de ad
+0x0200,1,14,0x0d02,True,lat=12.97300 lon=79.15980
+0x0210,2,14,0x9f9c,True,alt=114 batt=186 baro=980 tick=14
+0x0220,1,15,0x2039,True,lat=12.97310 lon=79.15990
+0x0230,2,15,0xe1de,True,alt=115 batt=185 baro=980 tick=15
+0x0240,3,2,0xdead,True,92 c3 9f df 87 f2 ae cc
+0x0250,1,16,0x3370,True,lat=12.97320 lon=79.16000
+0x0260,2,16,0x2420,True,alt=116 batt=184 baro=980 tick=16
+0x0270,1,17,0x46a7,True,lat=12.97330 lon=79.16010
+0x0280,2,17,0x6662,True,alt=117 batt=183 baro=980 tick=17
+0x0290,1,18,0x59de,True,lat=12.97340 lon=79.16020
+0x02a0,2,18,0xa8a4,True,alt=118 batt=182 baro=980 tick=18
+0x02b0,1,19,0x6d15,True,lat=12.97350 lon=79.16030
+0x02c0,2,19,0xeae6,True,alt=119 batt=181 baro=980 tick=19
+0x02d0,1,20,0x804c,True,lat=12.97360 lon=79.16040
+0x02e0,2,20,0x2d28,True,alt=120 batt=180 baro=980 tick=20
+0x02f0,1,21,0x9383,True,lat=12.97370 lon=79.16050
+0x0300,2,21,0x6f6a,True,alt=121 batt=179 baro=980 tick=21
+0x0310,1,22,0xa6ba,True,lat=12.97380 lon=79.16060
+0x0320,2,22,0xb1ac,True,alt=122 batt=178 baro=980 tick=22
+0x0330,1,23,0xb9f1,True,lat=12.97390 lon=79.16070
+0x0340,2,23,0xf3ee,True,alt=123 batt=177 baro=980 tick=23
+0x0350,1,24,0xcd28,True,lat=12.97400 lon=79.16080
+0x0360,2,24,0x3630,True,alt=124 batt=176 baro=980 tick=24
+0x0370,1,25,0xe05f,True,lat=12.97410 lon=79.16090
+0x0380,2,25,0x7872,True,alt=125 batt=175 baro=980 tick=25
+0x0390,1,26,0xf396,True,lat=12.97420 lon=79.16100
+0x03a0,2,26,0xbab4,True,alt=126 batt=174 baro=980 tick=26
+0x03b0,1,27,0x06cd,True,lat=12.97430 lon=79.16110
+0x03c0,2,27,0xfcf6,True,alt=127 batt=173 baro=980 tick=27
+0x03d0,1,28,0x1a04,True,lat=12.97440 lon=79.16120
+0x03e0,2,28,0x3f38,True,alt=128 batt=172 baro=980 tick=28
+0x03f0,1,29,0x2d3b,True,lat=12.97450 lon=79.16130
+0x0400,2,29,0x817a,True,alt=129 batt=171 baro=980 tick=29
+0x0410,1,30,0x4072,True,lat=12.97460 lon=79.16140
+0x0420,2,30,0xc3bc,True,alt=130 batt=170 baro=980 tick=30
+0x0430,1,31,0x53a9,True,lat=12.97470 lon=79.16150
+0x0440,2,31,0x05fe,True,alt=131 batt=169 baro=980 tick=31
+0x0450,1,32,0x66e0,True,lat=12.97480 lon=79.16160
+0x0460,2,32,0x4840,True,alt=132 batt=168 baro=980 tick=32
+0x0470,1,33,0x7a17,True,lat=12.97490 lon=79.16170
+0x0480,2,33,0x8a82,True,alt=133 batt=167 baro=980 tick=33
+0x0490,1,34,0x8d4e,True,lat=12.97500 lon=79.16180
+0x04a0,2,34,0xccc4,True,alt=134 batt=166 baro=980 tick=34
+0x04b0,1,35,0xa085,True,lat=12.97510 lon=79.16190
+0x04c0,2,35,0x0f06,True,alt=135 batt=165 baro=980 tick=35
+0x04d0,1,36,0xb3bc,True,lat=12.97520 lon=79.16200
+0x04e0,2,36,0x5148,True,alt=136 batt=164 baro=980 tick=36
+0x04f0,1,37,0xc6f3,True,lat=12.97530 lon=79.16210
+0x0500,2,37,0x938a,True,alt=137 batt=163 baro=980 tick=37
+0x0510,1,38,0xda2a,True,lat=12.97540 lon=79.16220
+0x0520,2,38,0xd5cc,True,alt=138 batt=162 baro=980 tick=38
+0x0530,1,39,0xed61,True,lat=12.97550 lon=79.16230
+0x0540,2,39,0x180e,True,alt=139 batt=161 baro=980 tick=39
+0x0550,1,40,0x0098,True,lat=12.97560 lon=79.16240
+0x0560,2,40,0x5a50,True,alt=140 batt=160 baro=980 tick=40
+0x0570,1,41,0x13cf,True,lat=12.97570 lon=79.16250
+0x0580,2,41,0x9c92,True,alt=141 batt=159 baro=980 tick=41
+0x0590,1,42,0x2706,True,lat=12.97580 lon=79.16260
+0x05a0,2,42,0xded4,True,alt=142 batt=158 baro=980 tick=42
+0x05b0,1,43,0x3a3d,True,lat=12.97590 lon=79.16270
+0x05c0,2,43,0x2116,True,alt=143 batt=157 baro=980 tick=43
+0x05d0,1,44,0x4d74,True,lat=12.97600 lon=79.16280
+0x05e0,2,44,0x6358,True,alt=144 batt=156 baro=980 tick=44
+0x05f0,1,45,0x60ab,True,lat=12.97610 lon=79.16290
+0x0600,2,45,0xa59a,True,alt=145 batt=155 baro=980 tick=45
+0x0610,1,46,0x73e2,True,lat=12.97620 lon=79.16300
+0x0620,2,46,0xe7dc,True,alt=146 batt=154 baro=980 tick=46
+0x0630,1,47,0x8719,True,lat=12.97630 lon=79.16310
+0x0640,2,47,0x2a1e,True,alt=147 batt=153 baro=980 tick=47
+0x0650,1,48,0x9a50,True,lat=12.97640 lon=79.16320
+0x0660,2,48,0x6c60,True,alt=148 batt=152 baro=980 tick=48
+0x0670,1,49,0xad87,True,lat=12.97650 lon=79.16330
+0x0680,2,49,0xaea2,True,alt=149 batt=151 baro=980 tick=49
+0x0690,1,50,0xc0be,True,lat=12.97660 lon=79.16340
+0x06a0,2,50,0xf0e4,True,alt=150 batt=150 baro=980 tick=0
+0x06b0,1,51,0xd3f5,True,lat=12.97670 lon=79.16350
+0x06c0,2,51,0x3326,True,alt=151 batt=149 baro=980 tick=1
+0x06d0,1,52,0xe72c,True,lat=12.97680 lon=79.16360
+0x06e0,2,52,0x7568,True,alt=152 batt=148 baro=980 tick=2
+0x06f0,1,53,0xfa63,True,lat=12.97690 lon=79.16370
+0x0700,2,53,0xb7aa,True,alt=153 batt=147 baro=980 tick=3
+0x0710,1,54,0x0d9a,True,lat=12.97700 lon=79.16380
+0x0720,2,54,0xf9ec,True,alt=154 batt=146 baro=980 tick=4
+0x0730,1,55,0x20d1,True,lat=12.97710 lon=79.16390
+0x0740,2,55,0x3c2e,True,alt=155 batt=145 baro=980 tick=5
+0x0750,1,56,0x3408,True,lat=12.97720 lon=79.16400
+0x0760,2,56,0x7e70,True,alt=156 batt=144 baro=980 tick=6
+0x0770,1,57,0x473f,True,lat=12.97730 lon=79.16410
+0x0780,2,57,0xc0b2,True,alt=157 batt=143 baro=980 tick=7
+0x0790,1,58,0x5a76,True,lat=12.97740 lon=79.16420
+0x07a0,2,58,0x02f4,True,alt=158 batt=142 baro=980 tick=8
+0x07b0,1,59,0x6dad,True,lat=12.97750 lon=79.16430
+0x07c0,2,59,0x4536,True,alt=159 batt=141 baro=980 tick=9
+0x07d0,1,60,0x80e4,True,lat=12.97760 lon=79.16440
+0x07e0,2,60,0x8778,True,alt=160 batt=140 baro=980 tick=10
+0x07f0,1,61,0x941b,True,lat=12.97770 lon=79.16450
+0x0800,2,61,0xc9ba,True,alt=161 batt=139 baro=980 tick=11
+0x0810,1,62,0xa752,True,lat=12.97780 lon=79.16460
+0x0820,2,62,0x0bfc,True,alt=162 batt=138 baro=980 tick=12
+0x0830,1,63,0xba89,True,lat=12.97790 lon=79.16470
+0x0840,2,63,0x4e3e,True,alt=163 batt=137 baro=980 tick=13
+0x0850,1,64,0xcdc0,True,lat=12.97800 lon=79.16480
+0x0860,2,64,0x9080,True,alt=164 batt=136 baro=980 tick=14
+0x0870,1,65,0xe0f7,True,lat=12.97810 lon=79.16490
+0x0880,2,65,0xd2c2,True,alt=165 batt=135 baro=980 tick=15
+0x0890,1,66,0xf42e,True,lat=12.97820 lon=79.16500
+0x08a0,2,66,0x1504,True,alt=166 batt=134 baro=980 tick=16
+0x08b0,1,67,0x0765,True,lat=12.97830 lon=79.16510
+0x08c0,2,67,0x5746,True,alt=167 batt=133 baro=980 tick=17
+0x08d0,1,68,0x1a9c,True,lat=12.97840 lon=79.16520
+0x08e0,2,68,0x9988,True,alt=168 batt=132 baro=980 tick=18
+0x08f0,1,69,0x2dd3,True,lat=12.97850 lon=79.16530
+0x0900,2,69,0xdbca,True,alt=169 batt=131 baro=980 tick=19
+0x0910,1,70,0x410a,True,lat=12.97860 lon=79.16540
+0x0920,2,70,0x1e0c,True,alt=170 batt=130 baro=980 tick=20
+0x0930,1,71,0x5441,True,lat=12.97870 lon=79.16550
+0x0940,2,71,0x604e,True,alt=171 batt=129 baro=980 tick=21
+0x0950,1,72,0x6778,True,lat=12.97880 lon=79.16560
+0x0960,2,72,0xa290,True,alt=172 batt=128 baro=980 tick=22
+0x0970,1,73,0x7aaf,True,lat=12.97890 lon=79.16570
+0x0980,2,73,0xe4d2,True,alt=173 batt=127 baro=980 tick=23
+0x0990,1,74,0x8de6,True,lat=12.97900 lon=79.16580
+0x09a0,2,74,0x2714,True,alt=174 batt=126 baro=980 tick=24
+0x09b0,1,75,0xa11d,True,lat=12.97910 lon=79.16590
+0x09c0,2,75,0x6956,True,alt=175 batt=125 baro=980 tick=25
+0x09d0,1,76,0xb454,True,lat=12.97920 lon=79.16600
+0x09e0,2,76,0xab98,True,alt=176 batt=124 baro=980 tick=26
+0x09f0,1,77,0xc78b,True,lat=12.97930 lon=79.16610
+0x0a00,2,77,0xedda,True,alt=177 batt=123 baro=980 tick=27
+0x0a10,1,78,0xdac2,True,lat=12.97940 lon=79.16620
+0x0a20,2,78,0x301c,True,alt=178 batt=122 baro=980 tick=28
+0x0a30,1,79,0xedf9,True,lat=12.97950 lon=79.16630
+0x0a40,2,79,0x725e,True,alt=179 batt=121 baro=980 tick=29
+0x0a50,1,80,0x0130,True,lat=12.97960 lon=79.16640
+0x0a60,2,80,0xb4a0,True,alt=180 batt=120 baro=980 tick=30
+0x0a70,1,81,0x1467,True,lat=12.97970 lon=79.16650
+0x0a80,2,81,0xf6e2,True,alt=181 batt=119 baro=980 tick=31
+0x0a90,1,82,0x279e,True,lat=12.97980 lon=79.16660
+0x0aa0,2,82,0x3924,True,alt=182 batt=118 baro=980 tick=32
+0x0ab0,1,83,0x3ad5,True,lat=12.97990 lon=79.16670
+0x0ac0,2,83,0x7b66,True,alt=183 batt=117 baro=980 tick=33
+0x0ad0,1,84,0x4e0c,True,lat=12.98000 lon=79.16680
+0x0ae0,2,84,0xbda8,True,alt=184 batt=116 baro=980 tick=34
+0x0af0,1,85,0x6143,True,lat=12.98010 lon=79.16690
+0x0b00,2,85,0xffea,True,alt=185 batt=115 baro=980 tick=35
+0x0b10,1,86,0x747a,True,lat=12.98020 lon=79.16700
+0x0b20,2,86,0x422c,True,alt=186 batt=114 baro=980 tick=36
+0x0b30,1,87,0x87b1,True,lat=12.98030 lon=79.16710
+0x0b40,2,87,0x846e,True,alt=187 batt=113 baro=980 tick=37
+0x0b50,1,88,0x9ae8,True,lat=12.98040 lon=79.16720
+0x0b60,2,88,0xc6b0,True,alt=188 batt=112 baro=980 tick=38
+0x0b70,1,89,0xae1f,True,lat=12.98050 lon=79.16730
+0x0b80,2,89,0x08f2,True,alt=189 batt=111 baro=980 tick=39
+0x0b90,1,90,0xc156,True,lat=12.98060 lon=79.16740
+0x0ba0,2,90,0x4b34,True,alt=190 batt=110 baro=980 tick=40
+0x0bb0,1,91,0xd48d,True,lat=12.98070 lon=79.16750
+0x0bc0,2,91,0x8d76,True,alt=191 batt=109 baro=980 tick=41
+0x0bd0,1,92,0xe7c4,True,lat=12.98080 lon=79.16760
+0x0be0,2,92,0xcfb8,True,alt=192 batt=108 baro=980 tick=42
+0x0bf0,1,93,0xfafb,True,lat=12.98090 lon=79.16770
+0x0c00,2,93,0x11fa,True,alt=193 batt=107 baro=980 tick=43
+0x0c10,1,94,0x0e32,True,lat=12.98100 lon=79.16780
+0x0c20,2,94,0x543c,True,alt=194 batt=106 baro=980 tick=44
+0x0c30,1,95,0x2169,True,lat=12.98110 lon=79.16790
+0x0c40,2,95,0x967e,True,alt=195 batt=105 baro=980 tick=45
+0x0c50,1,96,0x34a0,True,lat=12.98120 lon=79.16800
+0x0c60,2,96,0xd8c0,True,alt=196 batt=104 baro=980 tick=46
+0x0c70,1,97,0x47d7,True,lat=12.98130 lon=79.16810
+0x0c80,2,97,0x1b02,True,alt=197 batt=103 baro=980 tick=47
+0x0c90,1,98,0x5b0e,True,lat=12.98140 lon=79.16820
+0x0ca0,2,98,0x5d44,True,alt=198 batt=102 baro=980 tick=48
+0x0cb0,1,99,0x6e45,True,lat=12.98150 lon=79.16830
+0x0cc0,2,99,0x9f86,True,alt=199 batt=101 baro=980 tick=49
+0x0cd0,1,100,0x817c,True,lat=12.98160 lon=79.16840
+0x0ce0,2,100,0xe1c8,True,alt=200 batt=100 baro=980 tick=0
+0x0cf0,1,101,0x94b3,True,lat=12.98170 lon=79.16850
+0x0d00,2,101,0x240a,True,alt=201 batt=99 baro=980 tick=1
+0x0d10,1,102,0xa7ea,True,lat=12.98180 lon=79.16860
+0x0d20,2,102,0x664c,True,alt=202 batt=98 baro=980 tick=2
+0x0d30,1,103,0xbb21,True,lat=12.98190 lon=79.16870
+0x0d40,2,103,0xa88e,True,alt=203 batt=97 baro=980 tick=3
+0x0d50,1,104,0xce58,True,lat=12.98200 lon=79.16880
+0x0d60,2,104,0xead0,True,alt=204 batt=96 baro=980 tick=4
+0x0d70,1,105,0xe18f,True,lat=12.98210 lon=79.16890
+0x0d80,2,105,0x2d12,True,alt=205 batt=95 baro=980 tick=5
+0x0d90,1,106,0xf4c6,True,lat=12.98220 lon=79.16900
+0x0da0,2,106,0x6f54,True,alt=206 batt=94 baro=980 tick=6
+0x0db0,1,107,0x07fd,True,lat=12.98230 lon=79.16910
+0x0dc0,2,107,0xb196,True,alt=207 batt=93 baro=980 tick=7
+0x0dd0,1,108,0x1b34,True,lat=12.98240 lon=79.16920
+0x0de0,2,108,0xf3d8,True,alt=208 batt=92 baro=980 tick=8
+0x0df0,1,109,0x2e6b,True,lat=12.98250 lon=79.16930
+0x0e00,2,109,0x361a,True,alt=209 batt=91 baro=980 tick=9
+0x0e10,1,110,0x41a2,True,lat=12.98260 lon=79.16940
+0x0e20,2,110,0x785c,True,alt=210 batt=90 baro=980 tick=10
+0x0e30,1,111,0x54d9,True,lat=12.98270 lon=79.16950
+0x0e40,2,111,0xba9e,True,alt=211 batt=89 baro=980 tick=11
+0x0e50,1,112,0x6810,True,lat=12.98280 lon=79.16960
+0x0e60,2,112,0xfce0,True,alt=212 batt=88 baro=980 tick=12
+0x0e70,1,113,0x7b47,True,lat=12.98290 lon=79.16970
+0x0e80,2,113,0x3f22,True,alt=213 batt=87 baro=980 tick=13
+0x0e90,1,114,0x8e7e,True,lat=12.98300 lon=79.16980
+0x0ea0,2,114,0x8164,True,alt=214 batt=86 baro=980 tick=14
+0x0eb0,1,115,0xa1b5,True,lat=12.98310 lon=79.16990
+0x0ec0,2,115,0xc3a6,True,alt=215 batt=85 baro=980 tick=15
+0x0ed0,1,116,0xb4ec,True,lat=12.98320 lon=79.17000
+0x0ee0,2,116,0x05e8,True,alt=216 batt=84 baro=980 tick=16
+0x0ef0,1,117,0xc823,True,lat=12.98330 lon=79.17010
+0x0f00,2,117,0x482a,True,alt=217 batt=83 baro=980 tick=17
+0x0f10,1,118,0xdb5a,True,lat=12.98340 lon=79.17020
+0x0f20,2,118,0x8a6c,True,alt=218 batt=82 baro=980 tick=18
+0x0f30,1,119,0xee91,True,lat=12.98350 lon=79.17030
+0x0f40,2,119,0xccae,True,alt=219 batt=81 baro=980 tick=19
