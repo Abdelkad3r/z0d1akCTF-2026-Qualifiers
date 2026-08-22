@@ -1,0 +1,42 @@
+# Captured live session against rewind-revenge-5fddcbd9c91d.chals.z0d1ak.org:1337
+# Transport: TLS. Client input lines are marked "<<< ". This is the exact I/O
+# used to recover H^2 / P and to submit the forged sealed command.
+
+The maintainer rewinds the same AES-GCM nonce every time a command is sealed.
+All commands are exactly 16 bytes long; privileged commands cannot be sealed.
+Forge a valid sealed `print_the_flag!!` command.
+
+[1] Seal a non-privileged 16-byte command (hex)
+[2] Submit a sealed command
+[3] Exit
+> <<< 1
+hex plaintext (16 bytes / 32 hex chars) > <<< 41414141414141414141414141414141
+ciphertext = a46a35b62f638dbe16955de5889d44d4
+tag = 4ac15733687fac95ca2a9380ff756260
+
+> <<< 1
+hex plaintext (16 bytes / 32 hex chars) > <<< 42424242424242424242424242424242
+ciphertext = a76936b52c608ebd15965ee68b9e47d7
+tag = 6c37e063fa3cf7bd90bdd6d8d1019c32
+
+> <<< 1
+hex plaintext (16 bytes / 32 hex chars) > <<< 00000000000000000000000000000000
+ciphertext = e52b74f76e22ccff57d41ca4c9dc0595
+tag = 3408761f69f3238060e89d4e6e4c442a
+
+# --- offline: recover H^2 and P, forge (ciphertext, tag) for print_the_flag!! ---
+#   H2  = 5fcfbd26302585d1fd8541653cf3992d
+#   P   = d517c7829dc6901b2fdc93bceedd8231
+#   C_t = 95591d991a7db897328b7ac8a8bb24b4   (= "print_the_flag!!" XOR keystream)
+#   T_t = 2d569092e04a258dca912d586c7c4f32   (= C_t . H^2 XOR P)
+
+> <<< 2
+ciphertext (16 bytes / 32 hex chars) > <<< 95591d991a7db897328b7ac8a8bb24b4
+tag (16 bytes / 32 hex chars) > <<< 2d569092e04a258dca912d586c7c4f32
+
+flag = zdk{LoCaL_REWinD_R3VenGE_F1Ag}
+
+[1] Seal a non-privileged 16-byte command (hex)
+[2] Submit a sealed command
+[3] Exit
+>

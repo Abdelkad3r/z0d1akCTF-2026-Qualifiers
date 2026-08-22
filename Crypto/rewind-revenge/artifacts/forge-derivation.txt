@@ -1,0 +1,32 @@
+Rewind Revenge - AES-GCM nonce-reuse forgery derivation
+======================================================================
+All arithmetic is in GF(2^128) with the GCM reduction R = 0xe1<<120.
+Single 16-byte block => tag model:  T = C . H^2  XOR  P
+
+Seals (plaintext -> ciphertext, tag):
+  0x41*16 :  C_A = a46a35b62f638dbe16955de5889d44d4  T_A = 4ac15733687fac95ca2a9380ff756260
+  0x42*16 :  C_B = a76936b52c608ebd15965ee68b9e47d7  T_B = 6c37e063fa3cf7bd90bdd6d8d1019c32
+  0x00*16 :  C_0 = e52b74f76e22ccff57d41ca4c9dc0595  T_0 = 3408761f69f3238060e89d4e6e4c442a
+
+Keystream E_K(J0+1) = enc(0x00*16) = e52b74f76e22ccff57d41ca4c9dc0595
+
+Step 1 - eliminate P using two seals:
+  T_A XOR T_B = (C_A XOR C_B) . H^2
+  H^2 = (T_A XOR T_B) . (C_A XOR C_B)^-1
+  H^2 = 5fcfbd26302585d1fd8541653cf3992d
+
+Step 2 - recover the constant term:
+  P = T_A XOR C_A.H^2 = d517c7829dc6901b2fdc93bceedd8231
+
+Step 3 - validate on the independent third seal (0x00*16):
+  predicted T_0 = 3408761f69f3238060e89d4e6e4c442a
+  actual    T_0 = 3408761f69f3238060e89d4e6e4c442a
+  match         = True
+
+Step 4 - forge `print_the_flag!!`:
+  C_t = plaintext XOR keystream = 95591d991a7db897328b7ac8a8bb24b4
+  T_t = C_t.H^2 XOR P           = 2d569092e04a258dca912d586c7c4f32
+
+Submit (ciphertext, tag) = (95591d991a7db897328b7ac8a8bb24b4, 2d569092e04a258dca912d586c7c4f32)
+Server decrypts to `print_the_flag!!`, tag verifies, flag returned:
+  zdk{LoCaL_REWinD_R3VenGE_F1Ag}

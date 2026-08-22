@@ -1,0 +1,8 @@
+# Captured (plaintext, ciphertext, tag) triples from option [1] "Seal".
+# AES-GCM, single 16-byte block, the SAME (rewound) nonce for every seal.
+# Format: plaintext_hex  ciphertext_hex  tag_hex
+41414141414141414141414141414141  a46a35b62f638dbe16955de5889d44d4  4ac15733687fac95ca2a9380ff756260
+42424242424242424242424242424242  a76936b52c608ebd15965ee68b9e47d7  6c37e063fa3cf7bd90bdd6d8d1019c32
+00000000000000000000000000000000  e52b74f76e22ccff57d41ca4c9dc0595  3408761f69f3238060e89d4e6e4c442a
+# Sealing the all-zero block returns the raw keystream E_K(J0+1):
+#   keystream = e52b74f76e22ccff57d41ca4c9dc0595
