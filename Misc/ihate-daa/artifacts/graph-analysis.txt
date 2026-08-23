@@ -1,0 +1,19 @@
+roots                : 6  ['cvhgfhyvkvq', '0ij436dr', 'j4vnri8vkp', 'zoc67o2n1glo', 'r5nbjixy', 'sbp892mmn8n4gnd']
+nodes (crawled)      : 92358
+nodes (incl. unseen) : 92358
+edges                : 258532
+mean out-degree      : 2.799
+sinks (dead ends)    : 18497  (20.0%)
+out-degree histogram : {0: 18497, 2: 18494, 3: 18427, 4: 18493, 5: 18391, 6: 56}
+in-degree histogram  : {1: 19417, 2: 25170, 3: 21672, 4: 13994, 5: 7252, 6: 3165, 7: 1149, 8: 404, 9: 105, 10: 21} ...
+max in-degree        : 12
+token length hist    : {8: 11303, 9: 11518, 10: 11679, 11: 11532, 12: 11469, 13: 11514, 14: 11789, 15: 11554}
+reachable from roots : 92358 / 92358
+BFS level sizes      : {0: 6, 1: 24, 2: 80, 3: 214, 4: 613, 5: 1682, 6: 4429, 7: 10989, 8: 21817, 9: 27376, 10: 17399, 11: 5948, 12: 1389, 13: 311, 14: 68, 15: 11, 16: 2}
+eccentricity (max)   : 16
+back edges (cycles)  : 63236  -> has cycles
+
+flag node            : uxhqkhii
+shortest depth       : 9 hops from a root
+in-degree of flag    : 1
+shortest path        : zoc67o2n1glo -> g2t4csju91 -> a2yz00tco -> 3hy83x43jgmju -> yjkyi0w0zmj -> evxp8rol44 -> hfnuz9lxkcg -> qu8b4u753mqi56 -> bdv5h1snuatozrr -> uxhqkhii

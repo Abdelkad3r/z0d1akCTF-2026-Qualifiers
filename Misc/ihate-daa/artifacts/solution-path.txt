@@ -1,0 +1,19 @@
+z0d1akCTF 2026 Qualifiers -- ihateDAA
+Instance: ihate-daa-aa6e271ba001.chals.z0d1ak.org
+
+Shortest root-to-flag path (9 hops, 10 nodes):
+
+   0  /?path=zoc67o2n1glo      root
+   1  /?path=g2t4csju91        interior, out-deg 5
+   2  /?path=a2yz00tco         interior, out-deg 3
+   3  /?path=3hy83x43jgmju     interior, out-deg 4
+   4  /?path=yjkyi0w0zmj       interior, out-deg 4
+   5  /?path=evxp8rol44        interior, out-deg 3
+   6  /?path=hfnuz9lxkcg       interior, out-deg 3
+   7  /?path=qu8b4u753mqi56    interior, out-deg 5
+   8  /?path=bdv5h1snuatozrr   interior, out-deg 6
+   9  /?path=uxhqkhii          FLAG (sink)
+
+Flag: zdk{i_l0Ve_GRaPH_7RAvER5AL_4nd_dyN4mIc_inSTanc35}
+
+NOTE: tokens are regenerated per instance; only the flag string is constant.

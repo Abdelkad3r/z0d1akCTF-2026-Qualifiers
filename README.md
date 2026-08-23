@@ -18,6 +18,7 @@ Qualifiers.
 | Forensics | Dead Letter Wake | Solved | [Read the writeup](Forensics/dead-letter-wake/README.md) |
 | Forensics | Dead Current | Solved | [Read the writeup](Forensics/dead-current/README.md) |
 | Miscellaneous | genie | Solved | [Read the writeup](Misc/genie/README.md) |
+| Miscellaneous | ihateDAA | Solved | [Read the writeup](Misc/ihate-daa/README.md) |
 | Web Exploitation | captcha | Solved | [Read the writeup](Web/captcha/README.md) |
 | Web Exploitation | hydra-fc-will-come-back | Solved | [Read the writeup](Web/hydra-fc-will-come-back/README.md) |
 | Web Exploitation | Sprout & About | Solved | [Read the writeup](Web/sprout-and-about/README.md) |
