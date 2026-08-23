@@ -1,0 +1,32 @@
+Instance: https://theseus-d7d28bcc1b36.chals.z0d1ak.org
+Setup:    0x9e545e3c0baab3e08cdfd552c960a1050f373042
+Target:   0xe7f1725e7734ce288f8367e1Bb143E90bb3F0512
+Player:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+
+[+] reconstructed 8 canonical records from block 13
+[+] first mark:     0x02a89479ded787c07779f72cd9038d5cd7a6efbcf112cd56e411c71dd31ea78c
+[+] second mark:    0x27ce1bbda6f13d9836bfab6e3d0b2312fe55647d1849a78afc5e340310ebad50
+[+] harbour root:   0x8f6cbf57efe0320a9d4310abf4fac350b410eefd53be1807e4334a29c43dfc92
+[+] selected leaf:  0x4b7184e7237843f59cd13cd23b30956e03d63a24a5dc7a5e59306177fd8307cc
+[+] siblings:
+    0x9292bd54c28dd089a197d06eb72d82b21b2160d7af761e93145804e9865b736a
+    0x6167c12f47153e4f135a993d4fd5d2145d067fa495baa8d73512d67bdf0b5166
+    0x94a415d37e2bdf438906a7a9440f97b158b946ee77ae468328a10892acca2a4e
+[+] state mark:     0x5222ca9207cfcc6aad199f8777f69353f557eec01035575b452aa927f2a10401
+[+] block mark:     0x192ce05b9e753da0d59419c95cf5f8eef51d0ec9a3e6e7073b7bf063c841fbdf
+[+] execution mark: 0x2b9754f4219c39b327a385955e788bad551f93791000e594eb87842ade7bba77
+
+unlock transaction:
+0x53d9d8e67bde9db71ab23e75133cd6e31e5956c19e1bd7d336730237540c717d
+
+transaction status: 1
+Setup.isSolved(): true
+
+Setup deployment transaction (block 27):
+0x94571d0d262a0b4b8fc8549641994280815b0eddf31aca557cfcc8e71e0ab08a
+
+printable deployment fragment:
+-zdk{an_4DDrESS_Ls_A_l0C4TLoN_NoT_aN_Ld3nTl7Y}
+
+platform submission response:
+{"kind":"goodFlag","message":"The flag is correct."}
