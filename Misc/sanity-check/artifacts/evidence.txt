@@ -1,0 +1,28 @@
+Sanity Check -- collected evidence
+==================================
+
+## Injected marker (server-side, visible in page source; not rendered)
+
+z0d1ak.org / :
+<style id="sanity-check-fragment">:root{--sanity-fragment:"26cPm361Zq4WTj89j2HhnestsgA"}</style>
+
+www.z0d1ak.org / :
+<style id="sanity-check-fragment">:root{--sanity-fragment:"U9aCPzuwzja87fh1RiE83aGLBR7"}</style>
+
+## The marker is constant across paths on a host (host-keyed), e.g. apex:
+  /             -> --sanity-fragment:"26cPm361Zq4WTj89j2HhnestsgA"
+  /flag.txt     -> --sanity-fragment:"26cPm361Zq4WTj89j2HhnestsgA"
+  /robots.txt   -> --sanity-fragment:"26cPm361Zq4WTj89j2HhnestsgA"
+  /about        -> --sanity-fragment:"26cPm361Zq4WTj89j2HhnestsgA"
+  /rules        -> --sanity-fragment:"26cPm361Zq4WTj89j2HhnestsgA"
+  /sponsors     -> --sanity-fragment:"26cPm361Zq4WTj89j2HhnestsgA"
+  /register     -> --sanity-fragment:"26cPm361Zq4WTj89j2HhnestsgA"
+  /404.html     -> --sanity-fragment:"26cPm361Zq4WTj89j2HhnestsgA"
+
+## Base58 assembly
+  apex : 26cPm361Zq4WTj89j2HhnestsgA
+  www  : U9aCPzuwzja87fh1RiE83aGLBR7
+  base58(apex+www) = b'all the best, we hope you enjoy the ctf'
+  base58(www+apex) = b'\tk\x91\x8a2\x87\xaa\x16\x7fP\xc8\xe0\xce\xa8\xc2\xeax1\xfa\xfb\x08\xc9\x8a\xd7\xb5\x98J<\xe6\xb9pb\xdb\xe8\t\x8b\x7f:\xbc_'   # garbage -> apex is the high-order half
+
+  FLAG: zdk{all the best, we hope you enjoy the ctf}
