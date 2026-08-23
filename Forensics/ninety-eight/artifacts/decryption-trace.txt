@@ -1,0 +1,19 @@
+== qbcn key derivation ==
+domain            : b'ninety-eight/qbcn/v1\x00'
+piece_window      : pieces[0:320]  (first 16 SHA-1 hashes)
+                    6fd1ef2a93ecd59aee8e38bf2ef7d6de823cebc47d99dd10f488b57a583cd63faaa6ed1255cca16d82559cb1e3cd4e8b443aee6a5f29aac7916cf4ff7d00be9ef548550b90900aff966178ffbb688dab79fbd3eb81a4e77aa8732cbe71277ef115d7200358ff8b5737a8cef8ee37ff0819598100e477643503dd71fe72d3f92b6f5214fb90d37f01ffbd5d667b8e91af51f4dc954c76ce8acd3e8d2b1b84302c31f5de37e6b57e08c61f9520d1e765a94b034d56b959ea4ddaef1baed57452e6a6bb9aa289f26914841d427df7836b8900548be60ff95c2b9093313f369106542f241cce575d4c50f90d0d5c2b8ffda171e57e700d3e97d96717470ce8cdfaf8ad88439c4489c0128a8bcdc6c9027ee276cb457488481821a4c699bfbd49e42254f66b9db4c4eb239bfa95af1fd61bec1dbb0c83107f81320d85a19d7ee8a9dd
+piece_length_word : uint32le(131072) = 00000200
+key = sha256(domain||piece_window||piece_length_word)
+    = d2515578cf57736215ed384a7f75ee07e34fc38378be4fd454c9d52cffa40e68
+keycheck = sha256(key)[0:8] = 32de14e7f9606b68
+
+== outer HREG container  (final piece 16 of the .!qB partfile) ==
+head: 4852454702003d0032de14e7f9606b6872da89d7e221473dfa7cb3baa42b69f2
+magic=b'HREG' ver=2 clen=61 keycheck=32de14e7f9606b68 (matches -> key confirmed)
+
+== inner QBCN record (ciphertext XOR keystream, n0=0) ==
+raw: 5142434e010015007a646b7b513849545f684936485f6730613745447d4958a7bdee2dc9feeb917f850557cdff16f9ba39feca75076b72784a34ac57dd
+ascii: b'QBCN\x01\x00\x15\x00zdk{Q8IT_hI6H_g0a7ED}IX\xa7\xbd\xee-\xc9\xfe\xeb\x91\x7f\x85\x05W\xcd\xff\x16\xf9\xba9\xfe\xcau\x07krxJ4\xacW\xdd'
+magic=b'QBCN' ver=1 flaglen=21
+
+FLAG: zdk{Q8IT_hI6H_g0a7ED}

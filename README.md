@@ -17,6 +17,7 @@ Qualifiers.
 | Forensics | Unrotated | Solved | [Read the writeup](Forensics/unrotated/README.md) |
 | Forensics | Dead Letter Wake | Solved | [Read the writeup](Forensics/dead-letter-wake/README.md) |
 | Forensics | Dead Current | Solved | [Read the writeup](Forensics/dead-current/README.md) |
+| Forensics | 99.8% | Solved | [Read the writeup](Forensics/ninety-eight/README.md) |
 | Miscellaneous | genie | Solved | [Read the writeup](Misc/genie/README.md) |
 | Miscellaneous | ihateDAA | Solved | [Read the writeup](Misc/ihate-daa/README.md) |
 | Miscellaneous | Control Plane | Solved | [Read the writeup](Misc/control-plane/README.md) |
