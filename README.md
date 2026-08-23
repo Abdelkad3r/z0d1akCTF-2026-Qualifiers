@@ -28,6 +28,7 @@ Qualifiers.
 | Binary Exploitation | House XIII | Solved | [Read the writeup](Pwn/house-xiii/README.md) |
 | Binary Exploitation | Dead Reckoning | Solved | [Read the writeup](Pwn/dead-reckoning/README.md) |
 | Binary Exploitation | Phantom Phase | Solved | [Read the writeup](Pwn/phantom-phase/README.md) |
+| Binary Exploitation | paperweight | Solved | [Read the writeup](Pwn/paperweight/README.md) |
 | Binary Exploitation | Expert Witness | Solved | [Read the writeup](Pwn/expert-witness/README.md) |
 | Binary Exploitation | pelagic-palimpsest | Solved | [Read the writeup](Pwn/pelagic-palimpsest/README.md) |
 | Binary Exploitation | Undertow | Solved | [Read the writeup](Pwn/undertow/README.md) |
