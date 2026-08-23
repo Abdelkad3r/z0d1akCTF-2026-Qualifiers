@@ -1,0 +1,36 @@
+Middle-Out remote exploit evidence
+==================================
+
+Instance:
+  https://middle-out-7f06f7333e92.chals.z0d1ak.org
+
+Trial license:
+  build: c3bdbf6cc7b7ef92
+  tier: trial
+
+Collision job:
+  canonical center = 512
+  canonical radius = 256
+  native alias iqjnabzn -> center = 0
+  native alias jytlafdd -> radius = 1024
+  decoded worker window = 2048 bytes
+  valid WSC4 capsules = 4
+
+Recovered license material:
+  build key: c3bdbf6cc7b7ef92
+  authentic share slots: 209, 123
+  HMAC key: daa6e9b12b7c54a160b9b16d9c8d2b800e26a542718426a254bdf419ed2c4649
+
+Founder activation request:
+  POST /api/license/activate
+  Content-Type: application/json
+
+  {"token":"eyJ2IjoyLCJ0aWVyIjoiZm91bmRlciIsInF1b3RhIjo4LCJidWlsZCI6ImMzYmRiZjZjYzdiN2VmOTIifQ.deLZ7K37xmWf7MP4ewrsjUSPQQu8bskgWWS32qPhCgw"}
+
+Remote response:
+  HTTP 200
+  {"ok":true,"tier":"founder","license":"zdk{TH3_6A7EwaY_and_W0rker_5QuEEZ3d_dLfFeR3NT_MIdD1e5}"}
+
+The instanced hostname expired after the solve and subsequently returned the
+platform-level response "404 page not found". The binary leak and all values
+required for offline verification are preserved in this directory.

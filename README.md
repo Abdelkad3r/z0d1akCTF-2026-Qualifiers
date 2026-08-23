@@ -25,6 +25,7 @@ Qualifiers.
 | Web Exploitation | captcha | Solved | [Read the writeup](Web/captcha/README.md) |
 | Web Exploitation | hydra-fc-will-come-back | Solved | [Read the writeup](Web/hydra-fc-will-come-back/README.md) |
 | Web Exploitation | Sprout & About | Solved | [Read the writeup](Web/sprout-and-about/README.md) |
+| Web Exploitation | Middle-Out | Solved | [Read the writeup](Web/middle-out/README.md) |
 | Binary Exploitation | Salvage Protocol | Solved | [Read the writeup](Pwn/salvage-protocol/README.md) |
 | Binary Exploitation | rapture | Solved | [Read the writeup](Pwn/rapture/README.md) |
 | Binary Exploitation | House XIII | Solved | [Read the writeup](Pwn/house-xiii/README.md) |

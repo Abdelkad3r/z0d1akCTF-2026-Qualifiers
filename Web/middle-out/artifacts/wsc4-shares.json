@@ -1,0 +1,30 @@
+{
+  "build_key_hex": "c3bdbf6cc7b7ef92",
+  "capsules": [
+    {
+      "capsule_hex": "57534334017b20018b9ba950a456ee793078fbbadec0fdef7df438d4774bc7074bc456d7f29e66d50b8eca98f3b3bc8b",
+      "decrypted_share_hex": "9af22d13341cfecc68ecb60df118c53a79fff47d7fb023b174a2dd27b7722746",
+      "slot": 123
+    },
+    {
+      "capsule_hex": "57534334019420018b9ba9502859078507d265e882fa75a14d7385ddfd4bf9c2841129c7bdb50e4120385477089fd51b",
+      "decrypted_share_hex": "c8d6a14daf13571aea8d4bd17dca2f970db44f3a3c200b05c5d20021e091ce2d",
+      "slot": 148
+    },
+    {
+      "capsule_hex": "5753433401d120018b9ba950fd705fc4bb399b4d9f3761ae5f928bc8f5887ee0ae998f3204c81de3f217c54911e4ac37",
+      "decrypted_share_hex": "50ee014058b37f09ba21b7a23490e704680650747d039b6611cebbffa9055995",
+      "slot": 209
+    },
+    {
+      "capsule_hex": "5753433401ec20018b9ba950aff8a551c23ba8da9d04fe26619b6aafaa84ae5331991c4098abde437920e261df23080e",
+      "decrypted_share_hex": "777f0b9162f29220fd0bd86e49dad8dd427310a381a0368ae8d4e83b41914023",
+      "slot": 236
+    }
+  ],
+  "recovered_hmac_key_hex": "daa6e9b12b7c54a160b9b16d9c8d2b800e26a542718426a254bdf419ed2c4649",
+  "selected_slots": [
+    209,
+    123
+  ]
+}
