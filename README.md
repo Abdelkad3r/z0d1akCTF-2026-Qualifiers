@@ -29,6 +29,7 @@ Qualifiers.
 | Binary Exploitation | Phantom Phase | Solved | [Read the writeup](Pwn/phantom-phase/README.md) |
 | Binary Exploitation | Expert Witness | Solved | [Read the writeup](Pwn/expert-witness/README.md) |
 | Binary Exploitation | pelagic-palimpsest | Solved | [Read the writeup](Pwn/pelagic-palimpsest/README.md) |
+| Binary Exploitation | Undertow | Solved | [Read the writeup](Pwn/undertow/README.md) |
 | Cryptography | siren | Solved | [Read the writeup](Crypto/siren/README.md) |
 | Cryptography | Rewind | Solved | [Read the writeup](Crypto/rewind/README.md) |
 | Cryptography | Rewind Revenge | Solved | [Read the writeup](Crypto/rewind-revenge/README.md) |

